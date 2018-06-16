@@ -1,0 +1,4177 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>MainWindow</class>
+ <widget class="QMainWindow" name="MainWindow">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>1085</width>
+    <height>951</height>
+   </rect>
+  </property>
+  <property name="contextMenuPolicy">
+   <enum>Qt::PreventContextMenu</enum>
+  </property>
+  <property name="windowTitle">
+   <string>DnD Notepad</string>
+  </property>
+  <property name="styleSheet">
+   <string notr="true"/>
+  </property>
+  <widget class="QWidget" name="centralwidget">
+   <layout class="QGridLayout" name="gridLayout">
+    <item row="0" column="1">
+     <widget class="QTabWidget" name="tabWidget">
+      <property name="sizePolicy">
+       <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
+        <horstretch>0</horstretch>
+        <verstretch>0</verstretch>
+       </sizepolicy>
+      </property>
+      <property name="focusPolicy">
+       <enum>Qt::NoFocus</enum>
+      </property>
+      <property name="currentIndex">
+       <number>1</number>
+      </property>
+      <widget class="QWidget" name="characterSheet_tb">
+       <property name="focusPolicy">
+        <enum>Qt::StrongFocus</enum>
+       </property>
+       <attribute name="title">
+        <string>Character Sheet</string>
+       </attribute>
+       <widget class="QWidget" name="horizontalLayoutWidget">
+        <property name="geometry">
+         <rect>
+          <x>0</x>
+          <y>10</y>
+          <width>221</width>
+          <height>73</height>
+         </rect>
+        </property>
+        <layout class="QHBoxLayout" name="characterName_hl">
+         <item>
+          <widget class="QLabel" name="characterName_lb">
+           <property name="text">
+            <string>Character Name:</string>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QLineEdit" name="characterName_le"/>
+         </item>
+         <item>
+          <widget class="Line" name="characterName_vertline">
+           <property name="orientation">
+            <enum>Qt::Vertical</enum>
+           </property>
+          </widget>
+         </item>
+        </layout>
+       </widget>
+       <widget class="QWidget" name="verticalLayoutWidget">
+        <property name="geometry">
+         <rect>
+          <x>10</x>
+          <y>90</y>
+          <width>61</width>
+          <height>479</height>
+         </rect>
+        </property>
+        <layout class="QVBoxLayout" name="attributes_vl">
+         <item>
+          <widget class="Line" name="attrTop_horzline">
+           <property name="orientation">
+            <enum>Qt::Horizontal</enum>
+           </property>
+          </widget>
+         </item>
+         <item alignment="Qt::AlignHCenter">
+          <widget class="QLabel" name="strength_lb">
+           <property name="text">
+            <string>Strength</string>
+           </property>
+          </widget>
+         </item>
+         <item alignment="Qt::AlignHCenter">
+          <widget class="QSpinBox" name="strength_sb"/>
+         </item>
+         <item alignment="Qt::AlignHCenter">
+          <widget class="QLabel" name="strMod_lb">
+           <property name="text">
+            <string>Str Mod</string>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="Line" name="str_horzline">
+           <property name="orientation">
+            <enum>Qt::Horizontal</enum>
+           </property>
+          </widget>
+         </item>
+         <item alignment="Qt::AlignHCenter">
+          <widget class="QLabel" name="dexterity_lb">
+           <property name="text">
+            <string>Dexterity</string>
+           </property>
+          </widget>
+         </item>
+         <item alignment="Qt::AlignHCenter">
+          <widget class="QSpinBox" name="dexterity_sb"/>
+         </item>
+         <item alignment="Qt::AlignHCenter">
+          <widget class="QLabel" name="dexMod_lb">
+           <property name="text">
+            <string>Dex Mod</string>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="Line" name="dex_horzline">
+           <property name="orientation">
+            <enum>Qt::Horizontal</enum>
+           </property>
+          </widget>
+         </item>
+         <item alignment="Qt::AlignHCenter">
+          <widget class="QLabel" name="constitutuion_lb">
+           <property name="text">
+            <string>Constitution</string>
+           </property>
+          </widget>
+         </item>
+         <item alignment="Qt::AlignHCenter|Qt::AlignVCenter">
+          <widget class="QSpinBox" name="constitution_sb"/>
+         </item>
+         <item alignment="Qt::AlignHCenter">
+          <widget class="QLabel" name="conMod_lb">
+           <property name="text">
+            <string>Con Mod</string>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="Line" name="con_horzline">
+           <property name="orientation">
+            <enum>Qt::Horizontal</enum>
+           </property>
+          </widget>
+         </item>
+         <item alignment="Qt::AlignHCenter">
+          <widget class="QLabel" name="intelligence_lb">
+           <property name="text">
+            <string>Intelligence</string>
+           </property>
+          </widget>
+         </item>
+         <item alignment="Qt::AlignHCenter">
+          <widget class="QSpinBox" name="intelligence_sb"/>
+         </item>
+         <item alignment="Qt::AlignHCenter">
+          <widget class="QLabel" name="intMod_lb">
+           <property name="text">
+            <string>Int Mod</string>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="Line" name="int_horzline">
+           <property name="orientation">
+            <enum>Qt::Horizontal</enum>
+           </property>
+          </widget>
+         </item>
+         <item alignment="Qt::AlignHCenter">
+          <widget class="QLabel" name="wisdom_lb">
+           <property name="text">
+            <string>Wisdom</string>
+           </property>
+          </widget>
+         </item>
+         <item alignment="Qt::AlignHCenter">
+          <widget class="QSpinBox" name="wisdom_sb"/>
+         </item>
+         <item alignment="Qt::AlignHCenter">
+          <widget class="QLabel" name="wisMod_lb">
+           <property name="text">
+            <string>Wis Mod</string>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="Line" name="wis_horzline">
+           <property name="orientation">
+            <enum>Qt::Horizontal</enum>
+           </property>
+          </widget>
+         </item>
+         <item alignment="Qt::AlignHCenter">
+          <widget class="QLabel" name="charisma_lb">
+           <property name="text">
+            <string>Charisma</string>
+           </property>
+          </widget>
+         </item>
+         <item alignment="Qt::AlignHCenter">
+          <widget class="QSpinBox" name="charisma_sb"/>
+         </item>
+         <item alignment="Qt::AlignHCenter">
+          <widget class="QLabel" name="chaMod_lb">
+           <property name="text">
+            <string>Cha Mod</string>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="Line" name="attrBot_horzline">
+           <property name="orientation">
+            <enum>Qt::Horizontal</enum>
+           </property>
+          </widget>
+         </item>
+        </layout>
+       </widget>
+       <widget class="QPushButton" name="randomize_btn">
+        <property name="geometry">
+         <rect>
+          <x>10</x>
+          <y>540</y>
+          <width>61</width>
+          <height>23</height>
+         </rect>
+        </property>
+        <property name="text">
+         <string>Randomize</string>
+        </property>
+       </widget>
+       <widget class="QWidget" name="verticalLayoutWidget_2">
+        <property name="geometry">
+         <rect>
+          <x>80</x>
+          <y>90</y>
+          <width>121</width>
+          <height>204</height>
+         </rect>
+        </property>
+        <layout class="QVBoxLayout" name="savingThrows_vl">
+         <item>
+          <widget class="Line" name="savingThrowsTop_horzline">
+           <property name="orientation">
+            <enum>Qt::Horizontal</enum>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <layout class="QHBoxLayout" name="strengthSavingThrow_hl">
+           <item alignment="Qt::AlignHCenter">
+            <widget class="QCheckBox" name="strengthSavingThrow_cb">
+             <property name="text">
+              <string>+</string>
+             </property>
+            </widget>
+           </item>
+           <item alignment="Qt::AlignHCenter">
+            <widget class="QLabel" name="strengthSavingThrow_lb">
+             <property name="text">
+              <string>Strength</string>
+             </property>
+            </widget>
+           </item>
+          </layout>
+         </item>
+         <item>
+          <layout class="QHBoxLayout" name="dexteritySavingThrow_hl">
+           <item alignment="Qt::AlignHCenter">
+            <widget class="QCheckBox" name="dexteritySavingThrow_cb">
+             <property name="text">
+              <string>+</string>
+             </property>
+            </widget>
+           </item>
+           <item alignment="Qt::AlignHCenter">
+            <widget class="QLabel" name="dexteritySavingThrow_lb">
+             <property name="text">
+              <string>Dexterity</string>
+             </property>
+            </widget>
+           </item>
+          </layout>
+         </item>
+         <item>
+          <layout class="QHBoxLayout" name="constitutionSavingThrow_hl">
+           <item alignment="Qt::AlignHCenter">
+            <widget class="QCheckBox" name="constitutionSavingThrow_cb">
+             <property name="text">
+              <string>+</string>
+             </property>
+            </widget>
+           </item>
+           <item alignment="Qt::AlignHCenter">
+            <widget class="QLabel" name="constitutionSavingThrow_lb">
+             <property name="text">
+              <string>Constituion</string>
+             </property>
+            </widget>
+           </item>
+          </layout>
+         </item>
+         <item>
+          <layout class="QHBoxLayout" name="intelligenceSavingThrow_hl">
+           <item alignment="Qt::AlignHCenter">
+            <widget class="QCheckBox" name="intelligenceSavingThrow_cb">
+             <property name="text">
+              <string>+</string>
+             </property>
+            </widget>
+           </item>
+           <item alignment="Qt::AlignHCenter">
+            <widget class="QLabel" name="intelligenceSavingThrow_lb">
+             <property name="text">
+              <string>Intelligence</string>
+             </property>
+            </widget>
+           </item>
+          </layout>
+         </item>
+         <item>
+          <layout class="QHBoxLayout" name="wisdomSavingThrow_hl">
+           <item alignment="Qt::AlignHCenter">
+            <widget class="QCheckBox" name="wisdomSavingThrow_cb">
+             <property name="text">
+              <string>+</string>
+             </property>
+            </widget>
+           </item>
+           <item alignment="Qt::AlignHCenter">
+            <widget class="QLabel" name="wisdomSavingThrow_lb">
+             <property name="text">
+              <string>Wisdom</string>
+             </property>
+            </widget>
+           </item>
+          </layout>
+         </item>
+         <item>
+          <layout class="QHBoxLayout" name="charismaSavingThrow_hl">
+           <item alignment="Qt::AlignHCenter">
+            <widget class="QCheckBox" name="charismaSavingThrow_cb">
+             <property name="text">
+              <string>+</string>
+             </property>
+            </widget>
+           </item>
+           <item alignment="Qt::AlignHCenter">
+            <widget class="QLabel" name="charismaSavingThrow_lb">
+             <property name="text">
+              <string>Charisma</string>
+             </property>
+            </widget>
+           </item>
+          </layout>
+         </item>
+         <item>
+          <widget class="Line" name="savingThrowsBottom_horzline">
+           <property name="orientation">
+            <enum>Qt::Horizontal</enum>
+           </property>
+          </widget>
+         </item>
+         <item alignment="Qt::AlignHCenter">
+          <widget class="QLabel" name="savingThrows_lb">
+           <property name="text">
+            <string>Saving Throws</string>
+           </property>
+          </widget>
+         </item>
+        </layout>
+       </widget>
+       <widget class="QWidget" name="verticalLayoutWidget_8">
+        <property name="geometry">
+         <rect>
+          <x>360</x>
+          <y>220</y>
+          <width>221</width>
+          <height>90</height>
+         </rect>
+        </property>
+        <layout class="QVBoxLayout" name="deathSaves_vl">
+         <item>
+          <widget class="Line" name="deathSavesTop_horzline">
+           <property name="orientation">
+            <enum>Qt::Horizontal</enum>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <layout class="QVBoxLayout" name="successes_vl">
+           <item>
+            <layout class="QHBoxLayout" name="successes_hl">
+             <item>
+              <widget class="QLabel" name="successes_lb">
+               <property name="text">
+                <string>Successes</string>
+               </property>
+              </widget>
+             </item>
+             <item>
+              <widget class="QCheckBox" name="successes1_cb">
+               <property name="text">
+                <string/>
+               </property>
+              </widget>
+             </item>
+             <item>
+              <widget class="QCheckBox" name="successes2_cb">
+               <property name="text">
+                <string/>
+               </property>
+              </widget>
+             </item>
+             <item>
+              <widget class="QCheckBox" name="successes3_cb">
+               <property name="text">
+                <string/>
+               </property>
+              </widget>
+             </item>
+            </layout>
+           </item>
+          </layout>
+         </item>
+         <item>
+          <layout class="QVBoxLayout" name="failures_vl">
+           <item>
+            <layout class="QHBoxLayout" name="failures_hl">
+             <item>
+              <layout class="QHBoxLayout" name="failures_hl_2">
+               <item>
+                <widget class="QLabel" name="failures_lb">
+                 <property name="text">
+                  <string>Failures</string>
+                 </property>
+                </widget>
+               </item>
+               <item>
+                <widget class="QCheckBox" name="failures1_cb">
+                 <property name="text">
+                  <string/>
+                 </property>
+                </widget>
+               </item>
+               <item>
+                <widget class="QCheckBox" name="failures2_cb">
+                 <property name="text">
+                  <string/>
+                 </property>
+                </widget>
+               </item>
+               <item>
+                <widget class="QCheckBox" name="failures3_cb">
+                 <property name="text">
+                  <string/>
+                 </property>
+                </widget>
+               </item>
+              </layout>
+             </item>
+            </layout>
+           </item>
+          </layout>
+         </item>
+         <item>
+          <widget class="Line" name="deathSavesBottom_horzline">
+           <property name="orientation">
+            <enum>Qt::Horizontal</enum>
+           </property>
+          </widget>
+         </item>
+         <item alignment="Qt::AlignHCenter">
+          <widget class="QLabel" name="deathSaves_lb">
+           <property name="text">
+            <string>Death Saves</string>
+           </property>
+          </widget>
+         </item>
+        </layout>
+       </widget>
+       <widget class="QWidget" name="gridLayoutWidget">
+        <property name="geometry">
+         <rect>
+          <x>260</x>
+          <y>10</y>
+          <width>443</width>
+          <height>80</height>
+         </rect>
+        </property>
+        <layout class="QGridLayout" name="top_info_gl">
+         <item row="0" column="0">
+          <layout class="QHBoxLayout" name="class_hl">
+           <item>
+            <widget class="QLabel" name="class_lb">
+             <property name="text">
+              <string>Class:</string>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QComboBox" name="class_combo">
+             <item>
+              <property name="text">
+               <string>Barbarian</string>
+              </property>
+             </item>
+             <item>
+              <property name="text">
+               <string>Bard</string>
+              </property>
+             </item>
+             <item>
+              <property name="text">
+               <string>Cleric</string>
+              </property>
+             </item>
+             <item>
+              <property name="text">
+               <string>Druid</string>
+              </property>
+             </item>
+             <item>
+              <property name="text">
+               <string>Fighter</string>
+              </property>
+             </item>
+             <item>
+              <property name="text">
+               <string>Monk</string>
+              </property>
+             </item>
+             <item>
+              <property name="text">
+               <string>Paladin</string>
+              </property>
+             </item>
+             <item>
+              <property name="text">
+               <string>Ranger</string>
+              </property>
+             </item>
+             <item>
+              <property name="text">
+               <string>Rogue</string>
+              </property>
+             </item>
+             <item>
+              <property name="text">
+               <string>Sorcerer</string>
+              </property>
+             </item>
+             <item>
+              <property name="text">
+               <string>Warlock</string>
+              </property>
+             </item>
+             <item>
+              <property name="text">
+               <string>Wizard</string>
+              </property>
+             </item>
+            </widget>
+           </item>
+           <item>
+            <layout class="QHBoxLayout" name="background_hl">
+             <item>
+              <widget class="QLabel" name="background_lb">
+               <property name="text">
+                <string>Background:</string>
+               </property>
+              </widget>
+             </item>
+             <item>
+              <widget class="QLineEdit" name="background_le"/>
+             </item>
+             <item>
+              <layout class="QHBoxLayout" name="playerName_hl">
+               <item>
+                <widget class="QLabel" name="playerName_lb">
+                 <property name="text">
+                  <string>Player Name:</string>
+                 </property>
+                </widget>
+               </item>
+               <item>
+                <widget class="QLineEdit" name="playerName_le"/>
+               </item>
+              </layout>
+             </item>
+            </layout>
+           </item>
+          </layout>
+         </item>
+         <item row="1" column="0">
+          <layout class="QHBoxLayout" name="race_hl">
+           <item>
+            <widget class="QLabel" name="race_lb">
+             <property name="text">
+              <string>Race:</string>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QComboBox" name="race_combo">
+             <item>
+              <property name="text">
+               <string>Dwarf</string>
+              </property>
+             </item>
+             <item>
+              <property name="text">
+               <string>Elf</string>
+              </property>
+             </item>
+             <item>
+              <property name="text">
+               <string>Halfling</string>
+              </property>
+             </item>
+             <item>
+              <property name="text">
+               <string>Human</string>
+              </property>
+             </item>
+             <item>
+              <property name="text">
+               <string>Dragonborn</string>
+              </property>
+             </item>
+             <item>
+              <property name="text">
+               <string>Gnome</string>
+              </property>
+             </item>
+             <item>
+              <property name="text">
+               <string>Half-Elf</string>
+              </property>
+             </item>
+             <item>
+              <property name="text">
+               <string>Half-Orc</string>
+              </property>
+             </item>
+             <item>
+              <property name="text">
+               <string>Tiefling</string>
+              </property>
+             </item>
+            </widget>
+           </item>
+           <item>
+            <layout class="QHBoxLayout" name="horizontalLayout_5">
+             <item>
+              <widget class="QLabel" name="alignment_lb">
+               <property name="text">
+                <string>Alignment:</string>
+               </property>
+              </widget>
+             </item>
+             <item>
+              <widget class="QComboBox" name="alignment_combo">
+               <item>
+                <property name="text">
+                 <string>Lawful Good</string>
+                </property>
+               </item>
+               <item>
+                <property name="text">
+                 <string>Neutral Good</string>
+                </property>
+               </item>
+               <item>
+                <property name="text">
+                 <string>Chaotic Good</string>
+                </property>
+               </item>
+               <item>
+                <property name="text">
+                 <string>Lawful Neutral</string>
+                </property>
+               </item>
+               <item>
+                <property name="text">
+                 <string>Neutral</string>
+                </property>
+               </item>
+               <item>
+                <property name="text">
+                 <string>Chaotic Neutral</string>
+                </property>
+               </item>
+               <item>
+                <property name="text">
+                 <string>Lawful Evil</string>
+                </property>
+               </item>
+               <item>
+                <property name="text">
+                 <string>Neutral Evil</string>
+                </property>
+               </item>
+               <item>
+                <property name="text">
+                 <string>Chaotic Evil</string>
+                </property>
+               </item>
+              </widget>
+             </item>
+             <item>
+              <layout class="QHBoxLayout" name="xp_hl">
+               <item>
+                <widget class="QLabel" name="xp_lb">
+                 <property name="text">
+                  <string>Experience Points:</string>
+                 </property>
+                </widget>
+               </item>
+               <item>
+                <widget class="QLineEdit" name="xp_le"/>
+               </item>
+              </layout>
+             </item>
+            </layout>
+           </item>
+          </layout>
+         </item>
+        </layout>
+       </widget>
+       <widget class="QWidget" name="verticalLayoutWidget_18">
+        <property name="geometry">
+         <rect>
+          <x>320</x>
+          <y>100</y>
+          <width>301</width>
+          <height>122</height>
+         </rect>
+        </property>
+        <layout class="QVBoxLayout" name="defense_vl">
+         <item>
+          <widget class="Line" name="defenseTop_horzline">
+           <property name="orientation">
+            <enum>Qt::Horizontal</enum>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <layout class="QGridLayout" name="defenseTop_gl">
+           <item row="0" column="0">
+            <layout class="QVBoxLayout" name="armorClass_vl">
+             <item>
+              <widget class="QLineEdit" name="armorClass_le"/>
+             </item>
+             <item alignment="Qt::AlignHCenter">
+              <widget class="QLabel" name="armorClass_lb">
+               <property name="text">
+                <string>Armor Class</string>
+               </property>
+              </widget>
+             </item>
+            </layout>
+           </item>
+           <item row="0" column="1">
+            <layout class="QVBoxLayout" name="initiative_vl">
+             <item>
+              <widget class="QLineEdit" name="initiative_le"/>
+             </item>
+             <item alignment="Qt::AlignHCenter">
+              <widget class="QLabel" name="initiative_lb">
+               <property name="text">
+                <string>Initiative</string>
+               </property>
+              </widget>
+             </item>
+            </layout>
+           </item>
+           <item row="0" column="2">
+            <layout class="QVBoxLayout" name="speed_vl">
+             <item>
+              <widget class="QLineEdit" name="speed_le"/>
+             </item>
+             <item alignment="Qt::AlignHCenter">
+              <widget class="QLabel" name="speed_lb">
+               <property name="text">
+                <string>Speed</string>
+               </property>
+              </widget>
+             </item>
+            </layout>
+           </item>
+          </layout>
+         </item>
+         <item>
+          <layout class="QHBoxLayout" name="defenseBot_hl">
+           <item>
+            <layout class="QVBoxLayout" name="currentHP_vl">
+             <item>
+              <widget class="QLineEdit" name="currentHP_le"/>
+             </item>
+             <item alignment="Qt::AlignHCenter">
+              <widget class="QLabel" name="currentHP_lb">
+               <property name="text">
+                <string>Current Hit Points</string>
+               </property>
+              </widget>
+             </item>
+            </layout>
+           </item>
+           <item>
+            <layout class="QVBoxLayout" name="totalHitDice_vl">
+             <item>
+              <widget class="QLineEdit" name="totalHitDice_le"/>
+             </item>
+             <item alignment="Qt::AlignHCenter">
+              <widget class="QLabel" name="totalHitDice_lb">
+               <property name="text">
+                <string>Total Hit Dice</string>
+               </property>
+              </widget>
+             </item>
+            </layout>
+           </item>
+           <item>
+            <layout class="QVBoxLayout" name="hitDice_vl">
+             <item>
+              <widget class="QLineEdit" name="hitDice_le"/>
+             </item>
+             <item alignment="Qt::AlignHCenter">
+              <widget class="QLabel" name="hitDice_lb">
+               <property name="text">
+                <string>Hit Dice</string>
+               </property>
+              </widget>
+             </item>
+            </layout>
+           </item>
+          </layout>
+         </item>
+         <item>
+          <widget class="Line" name="defenseBot_horzline">
+           <property name="orientation">
+            <enum>Qt::Horizontal</enum>
+           </property>
+          </widget>
+         </item>
+        </layout>
+       </widget>
+       <widget class="QWidget" name="verticalLayoutWidget_16">
+        <property name="geometry">
+         <rect>
+          <x>80</x>
+          <y>300</y>
+          <width>221</width>
+          <height>461</height>
+         </rect>
+        </property>
+        <layout class="QVBoxLayout" name="skill_vl">
+         <item>
+          <layout class="QFormLayout" name="skill_fl">
+           <item row="0" column="0">
+            <layout class="QHBoxLayout" name="acrobatics_hl">
+             <item>
+              <widget class="QCheckBox" name="acrobatics_cb">
+               <property name="layoutDirection">
+                <enum>Qt::RightToLeft</enum>
+               </property>
+               <property name="text">
+                <string/>
+               </property>
+              </widget>
+             </item>
+             <item>
+              <widget class="QLabel" name="acrobaticsMod_lb">
+               <property name="text">
+                <string>+</string>
+               </property>
+              </widget>
+             </item>
+            </layout>
+           </item>
+           <item row="0" column="1">
+            <widget class="QLabel" name="acrobatics_lb">
+             <property name="text">
+              <string>Acrobatics (Dex)</string>
+             </property>
+            </widget>
+           </item>
+           <item row="1" column="0">
+            <layout class="QHBoxLayout" name="animalHandling_hl">
+             <item>
+              <widget class="QCheckBox" name="animalHandling_cb">
+               <property name="layoutDirection">
+                <enum>Qt::RightToLeft</enum>
+               </property>
+               <property name="text">
+                <string/>
+               </property>
+              </widget>
+             </item>
+             <item>
+              <widget class="QLabel" name="animalHandlingMod_lb">
+               <property name="text">
+                <string>+</string>
+               </property>
+              </widget>
+             </item>
+            </layout>
+           </item>
+           <item row="1" column="1">
+            <widget class="QLabel" name="animalHandling_lb">
+             <property name="text">
+              <string>Animal Handling (Wis)</string>
+             </property>
+            </widget>
+           </item>
+           <item row="2" column="0">
+            <layout class="QHBoxLayout" name="arcana_hl">
+             <item>
+              <widget class="QCheckBox" name="arcana_cb">
+               <property name="layoutDirection">
+                <enum>Qt::RightToLeft</enum>
+               </property>
+               <property name="text">
+                <string/>
+               </property>
+              </widget>
+             </item>
+             <item>
+              <widget class="QLabel" name="arcanaMod_lb">
+               <property name="text">
+                <string>+</string>
+               </property>
+              </widget>
+             </item>
+            </layout>
+           </item>
+           <item row="2" column="1">
+            <widget class="QLabel" name="arcana_lb">
+             <property name="text">
+              <string>Arcana (Int)</string>
+             </property>
+            </widget>
+           </item>
+           <item row="3" column="0">
+            <layout class="QHBoxLayout" name="athletics_hl">
+             <item>
+              <widget class="QCheckBox" name="athletics_cb">
+               <property name="layoutDirection">
+                <enum>Qt::RightToLeft</enum>
+               </property>
+               <property name="text">
+                <string/>
+               </property>
+              </widget>
+             </item>
+             <item>
+              <widget class="QLabel" name="athleticsMod_lb">
+               <property name="text">
+                <string>+</string>
+               </property>
+              </widget>
+             </item>
+            </layout>
+           </item>
+           <item row="3" column="1">
+            <widget class="QLabel" name="athletics_lb">
+             <property name="text">
+              <string>Atheltics (Str)</string>
+             </property>
+            </widget>
+           </item>
+           <item row="4" column="0">
+            <layout class="QHBoxLayout" name="deception_hl">
+             <item>
+              <widget class="QCheckBox" name="deception_cb">
+               <property name="layoutDirection">
+                <enum>Qt::RightToLeft</enum>
+               </property>
+               <property name="text">
+                <string/>
+               </property>
+              </widget>
+             </item>
+             <item>
+              <widget class="QLabel" name="deceptionMod_lb">
+               <property name="text">
+                <string>+</string>
+               </property>
+              </widget>
+             </item>
+            </layout>
+           </item>
+           <item row="4" column="1">
+            <widget class="QLabel" name="deception_lb">
+             <property name="text">
+              <string>Deception (Cha)</string>
+             </property>
+            </widget>
+           </item>
+           <item row="5" column="0">
+            <layout class="QHBoxLayout" name="history_hl">
+             <item>
+              <widget class="QCheckBox" name="history_cb">
+               <property name="layoutDirection">
+                <enum>Qt::RightToLeft</enum>
+               </property>
+               <property name="text">
+                <string/>
+               </property>
+              </widget>
+             </item>
+             <item>
+              <widget class="QLabel" name="historyMod_lb">
+               <property name="text">
+                <string>+</string>
+               </property>
+              </widget>
+             </item>
+            </layout>
+           </item>
+           <item row="5" column="1">
+            <widget class="QLabel" name="history_lb">
+             <property name="text">
+              <string>History (Int)</string>
+             </property>
+            </widget>
+           </item>
+           <item row="6" column="0">
+            <layout class="QHBoxLayout" name="insight_hl">
+             <item>
+              <widget class="QCheckBox" name="insight_cb">
+               <property name="layoutDirection">
+                <enum>Qt::RightToLeft</enum>
+               </property>
+               <property name="text">
+                <string/>
+               </property>
+              </widget>
+             </item>
+             <item>
+              <widget class="QLabel" name="insightMod_lb">
+               <property name="text">
+                <string>+</string>
+               </property>
+              </widget>
+             </item>
+            </layout>
+           </item>
+           <item row="6" column="1">
+            <widget class="QLabel" name="insight_lb">
+             <property name="text">
+              <string>Insight (Wis)</string>
+             </property>
+            </widget>
+           </item>
+           <item row="7" column="0">
+            <layout class="QHBoxLayout" name="intimidation_hl">
+             <item>
+              <widget class="QCheckBox" name="intimidation_cb">
+               <property name="layoutDirection">
+                <enum>Qt::RightToLeft</enum>
+               </property>
+               <property name="text">
+                <string/>
+               </property>
+              </widget>
+             </item>
+             <item>
+              <widget class="QLabel" name="intimidationMod_lb">
+               <property name="text">
+                <string>+</string>
+               </property>
+              </widget>
+             </item>
+            </layout>
+           </item>
+           <item row="7" column="1">
+            <widget class="QLabel" name="intimidation_lb">
+             <property name="text">
+              <string>Intimidation (Cha)</string>
+             </property>
+            </widget>
+           </item>
+           <item row="8" column="0">
+            <layout class="QHBoxLayout" name="investigation_hl">
+             <item>
+              <widget class="QCheckBox" name="investigation_cb">
+               <property name="layoutDirection">
+                <enum>Qt::RightToLeft</enum>
+               </property>
+               <property name="text">
+                <string/>
+               </property>
+              </widget>
+             </item>
+             <item>
+              <widget class="QLabel" name="investigationMod_lb">
+               <property name="text">
+                <string>+</string>
+               </property>
+              </widget>
+             </item>
+            </layout>
+           </item>
+           <item row="8" column="1">
+            <widget class="QLabel" name="investigation_lb">
+             <property name="text">
+              <string>Investigation (Int)</string>
+             </property>
+            </widget>
+           </item>
+           <item row="9" column="0">
+            <layout class="QHBoxLayout" name="medicine_hl">
+             <item>
+              <widget class="QCheckBox" name="medicine_cb">
+               <property name="layoutDirection">
+                <enum>Qt::RightToLeft</enum>
+               </property>
+               <property name="text">
+                <string/>
+               </property>
+              </widget>
+             </item>
+             <item>
+              <widget class="QLabel" name="medicineMod_lb">
+               <property name="text">
+                <string>+</string>
+               </property>
+              </widget>
+             </item>
+            </layout>
+           </item>
+           <item row="9" column="1">
+            <widget class="QLabel" name="medicine_lb">
+             <property name="text">
+              <string>Medicine (Wis)</string>
+             </property>
+            </widget>
+           </item>
+           <item row="10" column="0">
+            <layout class="QHBoxLayout" name="nature_hl">
+             <item>
+              <widget class="QCheckBox" name="nature_cb">
+               <property name="layoutDirection">
+                <enum>Qt::RightToLeft</enum>
+               </property>
+               <property name="text">
+                <string/>
+               </property>
+              </widget>
+             </item>
+             <item>
+              <widget class="QLabel" name="natureMod_lb">
+               <property name="text">
+                <string>+</string>
+               </property>
+              </widget>
+             </item>
+            </layout>
+           </item>
+           <item row="10" column="1">
+            <widget class="QLabel" name="nature_lb">
+             <property name="text">
+              <string>Nature (Int)</string>
+             </property>
+            </widget>
+           </item>
+           <item row="11" column="0">
+            <layout class="QHBoxLayout" name="perception_hl">
+             <item>
+              <widget class="QCheckBox" name="perception_cb">
+               <property name="layoutDirection">
+                <enum>Qt::RightToLeft</enum>
+               </property>
+               <property name="text">
+                <string/>
+               </property>
+              </widget>
+             </item>
+             <item>
+              <widget class="QLabel" name="perceptionMod_lb">
+               <property name="text">
+                <string>+</string>
+               </property>
+              </widget>
+             </item>
+            </layout>
+           </item>
+           <item row="11" column="1">
+            <widget class="QLabel" name="perception_lb">
+             <property name="text">
+              <string>Perception (Wis)</string>
+             </property>
+            </widget>
+           </item>
+           <item row="12" column="0">
+            <layout class="QHBoxLayout" name="performance_hl">
+             <item>
+              <widget class="QCheckBox" name="performance_cb">
+               <property name="layoutDirection">
+                <enum>Qt::RightToLeft</enum>
+               </property>
+               <property name="text">
+                <string/>
+               </property>
+              </widget>
+             </item>
+             <item>
+              <widget class="QLabel" name="performanceMod_lb">
+               <property name="text">
+                <string>+</string>
+               </property>
+              </widget>
+             </item>
+            </layout>
+           </item>
+           <item row="12" column="1">
+            <widget class="QLabel" name="performance_lb">
+             <property name="text">
+              <string>Performance (Cha)</string>
+             </property>
+            </widget>
+           </item>
+           <item row="13" column="0">
+            <layout class="QHBoxLayout" name="persuassion_hl">
+             <item>
+              <widget class="QCheckBox" name="persuassion_cb">
+               <property name="layoutDirection">
+                <enum>Qt::RightToLeft</enum>
+               </property>
+               <property name="text">
+                <string/>
+               </property>
+              </widget>
+             </item>
+             <item>
+              <widget class="QLabel" name="persuassionMod_lb">
+               <property name="text">
+                <string>+</string>
+               </property>
+              </widget>
+             </item>
+            </layout>
+           </item>
+           <item row="13" column="1">
+            <widget class="QLabel" name="persuassion_lb">
+             <property name="text">
+              <string>Persuassion (Cha)</string>
+             </property>
+            </widget>
+           </item>
+           <item row="14" column="0">
+            <layout class="QHBoxLayout" name="religion_hl">
+             <item>
+              <widget class="QCheckBox" name="religion_cb">
+               <property name="layoutDirection">
+                <enum>Qt::RightToLeft</enum>
+               </property>
+               <property name="text">
+                <string/>
+               </property>
+              </widget>
+             </item>
+             <item>
+              <widget class="QLabel" name="religionMod_lb">
+               <property name="text">
+                <string>+</string>
+               </property>
+              </widget>
+             </item>
+            </layout>
+           </item>
+           <item row="14" column="1">
+            <widget class="QLabel" name="religion_lb">
+             <property name="text">
+              <string>Religion (Int)</string>
+             </property>
+            </widget>
+           </item>
+           <item row="15" column="0">
+            <layout class="QHBoxLayout" name="sleightOfHand_hl">
+             <item>
+              <widget class="QCheckBox" name="sleightOfHand_cb">
+               <property name="layoutDirection">
+                <enum>Qt::RightToLeft</enum>
+               </property>
+               <property name="text">
+                <string/>
+               </property>
+              </widget>
+             </item>
+             <item>
+              <widget class="QLabel" name="sleightOfHandMod_lb">
+               <property name="text">
+                <string>+</string>
+               </property>
+              </widget>
+             </item>
+            </layout>
+           </item>
+           <item row="15" column="1">
+            <widget class="QLabel" name="sleightOfHand_lb">
+             <property name="text">
+              <string>Sleight of Hand (Dex)</string>
+             </property>
+            </widget>
+           </item>
+           <item row="16" column="0">
+            <layout class="QHBoxLayout" name="stealth_hl">
+             <item>
+              <widget class="QCheckBox" name="stealth_cb">
+               <property name="layoutDirection">
+                <enum>Qt::RightToLeft</enum>
+               </property>
+               <property name="text">
+                <string/>
+               </property>
+              </widget>
+             </item>
+             <item>
+              <widget class="QLabel" name="stealthMod_lb">
+               <property name="text">
+                <string>+</string>
+               </property>
+              </widget>
+             </item>
+            </layout>
+           </item>
+           <item row="16" column="1">
+            <widget class="QLabel" name="stealth_lb">
+             <property name="text">
+              <string>Stealth (Dex)</string>
+             </property>
+            </widget>
+           </item>
+           <item row="17" column="0">
+            <layout class="QHBoxLayout" name="survival_hl">
+             <item>
+              <widget class="QCheckBox" name="survival_cb">
+               <property name="layoutDirection">
+                <enum>Qt::RightToLeft</enum>
+               </property>
+               <property name="text">
+                <string/>
+               </property>
+              </widget>
+             </item>
+             <item>
+              <widget class="QLabel" name="survivalMod_lb">
+               <property name="text">
+                <string>+</string>
+               </property>
+              </widget>
+             </item>
+            </layout>
+           </item>
+           <item row="17" column="1">
+            <widget class="QLabel" name="survival_lb">
+             <property name="text">
+              <string>Survivial (Wis)</string>
+             </property>
+            </widget>
+           </item>
+          </layout>
+         </item>
+         <item>
+          <widget class="Line" name="skills_horzline">
+           <property name="orientation">
+            <enum>Qt::Horizontal</enum>
+           </property>
+          </widget>
+         </item>
+         <item alignment="Qt::AlignHCenter">
+          <widget class="QLabel" name="skills_lb">
+           <property name="text">
+            <string>Skills</string>
+           </property>
+          </widget>
+         </item>
+        </layout>
+       </widget>
+       <widget class="QWidget" name="layoutWidget">
+        <property name="geometry">
+         <rect>
+          <x>720</x>
+          <y>10</y>
+          <width>329</width>
+          <height>398</height>
+         </rect>
+        </property>
+        <layout class="QVBoxLayout" name="textInfo_vl2">
+         <item>
+          <widget class="QPlainTextEdit" name="personalityTraits_pte"/>
+         </item>
+         <item alignment="Qt::AlignHCenter">
+          <widget class="QLabel" name="personalityTraits_lb">
+           <property name="text">
+            <string>Personality Traits</string>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <layout class="QVBoxLayout" name="text_info_vl3">
+           <item>
+            <widget class="QPlainTextEdit" name="ideals_pte"/>
+           </item>
+           <item alignment="Qt::AlignHCenter">
+            <widget class="QLabel" name="ideals_lb">
+             <property name="text">
+              <string>Ideals</string>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <layout class="QVBoxLayout" name="bonds_vl">
+             <item>
+              <widget class="QPlainTextEdit" name="bonds_pte"/>
+             </item>
+             <item alignment="Qt::AlignHCenter">
+              <widget class="QLabel" name="bonds_lb">
+               <property name="text">
+                <string>Bonds</string>
+               </property>
+              </widget>
+             </item>
+            </layout>
+           </item>
+           <item>
+            <layout class="QVBoxLayout" name="flaws_vl">
+             <item>
+              <widget class="QPlainTextEdit" name="flaws_pte"/>
+             </item>
+             <item alignment="Qt::AlignHCenter">
+              <widget class="QLabel" name="flaws_llb">
+               <property name="text">
+                <string>Flaws</string>
+               </property>
+              </widget>
+             </item>
+            </layout>
+           </item>
+          </layout>
+         </item>
+        </layout>
+       </widget>
+       <widget class="QWidget" name="verticalLayoutWidget_3">
+        <property name="geometry">
+         <rect>
+          <x>330</x>
+          <y>330</y>
+          <width>301</width>
+          <height>381</height>
+         </rect>
+        </property>
+        <layout class="QVBoxLayout" name="attacks_vl">
+         <item>
+          <widget class="Line" name="attacks1_horzline">
+           <property name="orientation">
+            <enum>Qt::Horizontal</enum>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <layout class="QHBoxLayout" name="attacksLabel_hl">
+           <item>
+            <widget class="QLabel" name="attacksName_lb">
+             <property name="text">
+              <string>Name</string>
+             </property>
+            </widget>
+           </item>
+           <item alignment="Qt::AlignHCenter">
+            <widget class="QLabel" name="attacksBonus_lb">
+             <property name="text">
+              <string>Atk Bonus</string>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QLabel" name="attacksDamage_lb">
+             <property name="text">
+              <string>Damage/Type</string>
+             </property>
+            </widget>
+           </item>
+          </layout>
+         </item>
+         <item>
+          <layout class="QHBoxLayout" name="weapon1_hl">
+           <item>
+            <widget class="QLineEdit" name="weapon1Name_le"/>
+           </item>
+           <item>
+            <widget class="QSpinBox" name="weapon1Bonus_sb"/>
+           </item>
+           <item>
+            <widget class="QLineEdit" name="weapon1Damage_le"/>
+           </item>
+          </layout>
+         </item>
+         <item>
+          <layout class="QHBoxLayout" name="weapon2_hl">
+           <item>
+            <widget class="QLineEdit" name="weapon2Name_le"/>
+           </item>
+           <item>
+            <widget class="QSpinBox" name="weapon2Bonus_sb"/>
+           </item>
+           <item>
+            <widget class="QLineEdit" name="weapon2Damage_le"/>
+           </item>
+          </layout>
+         </item>
+         <item>
+          <layout class="QHBoxLayout" name="weapon3_hl">
+           <item>
+            <widget class="QLineEdit" name="weapon3Name_le"/>
+           </item>
+           <item>
+            <widget class="QSpinBox" name="weapon3Bonus_sb"/>
+           </item>
+           <item>
+            <widget class="QLineEdit" name="weapon3Damage_le"/>
+           </item>
+          </layout>
+         </item>
+         <item>
+          <layout class="QHBoxLayout" name="weapon4_hl">
+           <item>
+            <widget class="QLineEdit" name="weapon4Name_le"/>
+           </item>
+           <item>
+            <widget class="QSpinBox" name="weapon4Bonus_sb"/>
+           </item>
+           <item>
+            <widget class="QLineEdit" name="weapon4Damage_le"/>
+           </item>
+          </layout>
+         </item>
+         <item>
+          <widget class="Line" name="attacks2_horzline">
+           <property name="orientation">
+            <enum>Qt::Horizontal</enum>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QPlainTextEdit" name="weaponInfo_pte"/>
+         </item>
+         <item>
+          <widget class="Line" name="attacks3_horzline">
+           <property name="orientation">
+            <enum>Qt::Horizontal</enum>
+           </property>
+          </widget>
+         </item>
+         <item alignment="Qt::AlignHCenter">
+          <widget class="QLabel" name="attacksSpellcasting_lb">
+           <property name="text">
+            <string>Attacks &amp; Spellcasting</string>
+           </property>
+          </widget>
+         </item>
+        </layout>
+       </widget>
+       <widget class="QWidget" name="verticalLayoutWidget_5">
+        <property name="geometry">
+         <rect>
+          <x>80</x>
+          <y>720</y>
+          <width>221</width>
+          <height>131</height>
+         </rect>
+        </property>
+        <layout class="QVBoxLayout" name="languages_vl">
+         <item>
+          <widget class="QPlainTextEdit" name="languages_pte"/>
+         </item>
+         <item alignment="Qt::AlignHCenter">
+          <widget class="QLabel" name="languages_lb">
+           <property name="text">
+            <string>Other Proficiencies &amp; Languages</string>
+           </property>
+          </widget>
+         </item>
+        </layout>
+       </widget>
+       <widget class="QWidget" name="verticalLayoutWidget_6">
+        <property name="geometry">
+         <rect>
+          <x>330</x>
+          <y>720</y>
+          <width>301</width>
+          <height>131</height>
+         </rect>
+        </property>
+        <layout class="QVBoxLayout" name="equipment_vl">
+         <item>
+          <widget class="QPlainTextEdit" name="equipment_pte"/>
+         </item>
+         <item alignment="Qt::AlignHCenter">
+          <widget class="QLabel" name="equipment_lb">
+           <property name="text">
+            <string>Equipment</string>
+           </property>
+          </widget>
+         </item>
+        </layout>
+       </widget>
+       <widget class="QWidget" name="verticalLayoutWidget_4">
+        <property name="geometry">
+         <rect>
+          <x>720</x>
+          <y>420</y>
+          <width>331</width>
+          <height>411</height>
+         </rect>
+        </property>
+        <layout class="QVBoxLayout" name="verticalLayout">
+         <item>
+          <widget class="QPlainTextEdit" name="featuresTraits_pte"/>
+         </item>
+         <item>
+          <widget class="QLabel" name="label">
+           <property name="text">
+            <string>Features &amp; Traits</string>
+           </property>
+          </widget>
+         </item>
+        </layout>
+       </widget>
+      </widget>
+      <widget class="QWidget" name="spellbook_tb">
+       <attribute name="title">
+        <string>Spellbook</string>
+       </attribute>
+       <widget class="QWidget" name="horizontalLayoutWidget_2">
+        <property name="geometry">
+         <rect>
+          <x>30</x>
+          <y>20</y>
+          <width>231</width>
+          <height>41</height>
+         </rect>
+        </property>
+        <layout class="QHBoxLayout" name="spellCastingClass_hl">
+         <item>
+          <widget class="QLabel" name="spellCastingClass_lb">
+           <property name="text">
+            <string>Spell Casting Class</string>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QLineEdit" name="spellCastingClass_le"/>
+         </item>
+        </layout>
+       </widget>
+       <widget class="QWidget" name="horizontalLayoutWidget_3">
+        <property name="geometry">
+         <rect>
+          <x>280</x>
+          <y>30</y>
+          <width>291</width>
+          <height>51</height>
+         </rect>
+        </property>
+        <layout class="QHBoxLayout" name="horizontalLayout_2">
+         <item>
+          <layout class="QVBoxLayout" name="spellAbility_vl">
+           <item>
+            <widget class="QSpinBox" name="spellAbility_sb"/>
+           </item>
+           <item>
+            <widget class="QLabel" name="spellAbility_lb">
+             <property name="text">
+              <string>Spellcasting Ability</string>
+             </property>
+            </widget>
+           </item>
+          </layout>
+         </item>
+         <item>
+          <layout class="QVBoxLayout" name="spellSave_vl">
+           <item>
+            <widget class="QSpinBox" name="spellSave_sb"/>
+           </item>
+           <item>
+            <widget class="QLabel" name="spellSave_lb">
+             <property name="text">
+              <string>Spell Save DC</string>
+             </property>
+            </widget>
+           </item>
+          </layout>
+         </item>
+         <item>
+          <layout class="QVBoxLayout" name="spellAttack_vl">
+           <item>
+            <widget class="QSpinBox" name="spellAttack_sb"/>
+           </item>
+           <item>
+            <widget class="QLabel" name="spellAttack_lb">
+             <property name="text">
+              <string>Spell Attack Bonus</string>
+             </property>
+            </widget>
+           </item>
+          </layout>
+         </item>
+        </layout>
+       </widget>
+       <widget class="QWidget" name="gridLayoutWidget_2">
+        <property name="geometry">
+         <rect>
+          <x>30</x>
+          <y>90</y>
+          <width>1030</width>
+          <height>806</height>
+         </rect>
+        </property>
+        <layout class="QGridLayout" name="spells_gl">
+         <item row="3" column="3">
+          <widget class="Line" name="line_17">
+           <property name="orientation">
+            <enum>Qt::Vertical</enum>
+           </property>
+          </widget>
+         </item>
+         <item row="3" column="5">
+          <widget class="Line" name="line_18">
+           <property name="orientation">
+            <enum>Qt::Vertical</enum>
+           </property>
+          </widget>
+         </item>
+         <item row="3" column="1">
+          <widget class="Line" name="line_16">
+           <property name="orientation">
+            <enum>Qt::Vertical</enum>
+           </property>
+          </widget>
+         </item>
+         <item row="2" column="8">
+          <widget class="Line" name="line_24">
+           <property name="orientation">
+            <enum>Qt::Horizontal</enum>
+           </property>
+          </widget>
+         </item>
+         <item row="2" column="6">
+          <widget class="Line" name="line_23">
+           <property name="orientation">
+            <enum>Qt::Horizontal</enum>
+           </property>
+          </widget>
+         </item>
+         <item row="2" column="2">
+          <widget class="Line" name="line_21">
+           <property name="orientation">
+            <enum>Qt::Horizontal</enum>
+           </property>
+          </widget>
+         </item>
+         <item row="2" column="0">
+          <widget class="Line" name="line_20">
+           <property name="orientation">
+            <enum>Qt::Horizontal</enum>
+           </property>
+          </widget>
+         </item>
+         <item row="3" column="7">
+          <widget class="Line" name="line_15">
+           <property name="orientation">
+            <enum>Qt::Vertical</enum>
+           </property>
+          </widget>
+         </item>
+         <item row="2" column="4">
+          <widget class="Line" name="line_22">
+           <property name="orientation">
+            <enum>Qt::Horizontal</enum>
+           </property>
+          </widget>
+         </item>
+         <item row="3" column="2">
+          <layout class="QVBoxLayout" name="spell3_vl">
+           <item>
+            <layout class="QHBoxLayout" name="spell3_hl">
+             <item alignment="Qt::AlignBottom">
+              <widget class="QLabel" name="spell3Level_lb">
+               <property name="text">
+                <string>Spell Level</string>
+               </property>
+              </widget>
+             </item>
+             <item alignment="Qt::AlignBottom">
+              <widget class="QLabel" name="spell3Total_lb">
+               <property name="text">
+                <string>Slots Total</string>
+               </property>
+              </widget>
+             </item>
+             <item alignment="Qt::AlignBottom">
+              <widget class="QLabel" name="spell3Expended_lb">
+               <property name="text">
+                <string>Slots Expended</string>
+               </property>
+              </widget>
+             </item>
+            </layout>
+           </item>
+           <item>
+            <layout class="QHBoxLayout" name="spell3Values_hl">
+             <item>
+              <widget class="QLabel" name="spell3ValuesLevel_lb">
+               <property name="text">
+                <string>3</string>
+               </property>
+              </widget>
+             </item>
+             <item>
+              <widget class="QSpinBox" name="spell3Total_sb"/>
+             </item>
+             <item>
+              <widget class="QSpinBox" name="spell3Expended_sb"/>
+             </item>
+            </layout>
+           </item>
+           <item>
+            <widget class="Line" name="line_3">
+             <property name="orientation">
+              <enum>Qt::Horizontal</enum>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <layout class="QHBoxLayout" name="spell3_1_hl">
+             <item>
+              <widget class="QCheckBox" name="spell3_1_cb">
+               <property name="text">
+                <string/>
+               </property>
+              </widget>
+             </item>
+             <item>
+              <widget class="QLineEdit" name="spell3_1_le"/>
+             </item>
+            </layout>
+           </item>
+           <item>
+            <layout class="QHBoxLayout" name="spell3_2_hl">
+             <item>
+              <widget class="QCheckBox" name="spell3_2_cb">
+               <property name="text">
+                <string/>
+               </property>
+              </widget>
+             </item>
+             <item>
+              <widget class="QLineEdit" name="spell3_2_le"/>
+             </item>
+            </layout>
+           </item>
+           <item>
+            <layout class="QHBoxLayout" name="spell3_3_hl">
+             <item>
+              <widget class="QCheckBox" name="spell3_3_cb">
+               <property name="text">
+                <string/>
+               </property>
+              </widget>
+             </item>
+             <item>
+              <widget class="QLineEdit" name="spell3_3_le"/>
+             </item>
+            </layout>
+           </item>
+           <item>
+            <layout class="QHBoxLayout" name="horizontalLayout_24">
+             <item>
+              <widget class="QCheckBox" name="checkBox_17">
+               <property name="text">
+                <string/>
+               </property>
+              </widget>
+             </item>
+             <item>
+              <widget class="QLineEdit" name="lineEdit_26"/>
+             </item>
+            </layout>
+           </item>
+           <item>
+            <layout class="QHBoxLayout" name="horizontalLayout_25">
+             <item>
+              <widget class="QCheckBox" name="checkBox_18">
+               <property name="text">
+                <string/>
+               </property>
+              </widget>
+             </item>
+             <item>
+              <widget class="QLineEdit" name="lineEdit_27"/>
+             </item>
+            </layout>
+           </item>
+           <item>
+            <layout class="QHBoxLayout" name="horizontalLayout_26">
+             <item>
+              <widget class="QCheckBox" name="checkBox_19">
+               <property name="text">
+                <string/>
+               </property>
+              </widget>
+             </item>
+             <item>
+              <widget class="QLineEdit" name="lineEdit_28"/>
+             </item>
+            </layout>
+           </item>
+           <item>
+            <layout class="QHBoxLayout" name="horizontalLayout_27">
+             <item>
+              <widget class="QCheckBox" name="checkBox_20">
+               <property name="text">
+                <string/>
+               </property>
+              </widget>
+             </item>
+             <item>
+              <widget class="QLineEdit" name="lineEdit_29"/>
+             </item>
+            </layout>
+           </item>
+           <item>
+            <layout class="QHBoxLayout" name="horizontalLayout_28">
+             <item>
+              <widget class="QCheckBox" name="checkBox_21">
+               <property name="text">
+                <string/>
+               </property>
+              </widget>
+             </item>
+             <item>
+              <widget class="QLineEdit" name="lineEdit_30"/>
+             </item>
+            </layout>
+           </item>
+           <item>
+            <layout class="QHBoxLayout" name="horizontalLayout_29">
+             <item>
+              <widget class="QCheckBox" name="checkBox_22">
+               <property name="text">
+                <string/>
+               </property>
+              </widget>
+             </item>
+             <item>
+              <widget class="QLineEdit" name="lineEdit_31"/>
+             </item>
+            </layout>
+           </item>
+           <item>
+            <layout class="QHBoxLayout" name="horizontalLayout_30">
+             <item>
+              <widget class="QCheckBox" name="checkBox_23">
+               <property name="text">
+                <string/>
+               </property>
+              </widget>
+             </item>
+             <item>
+              <widget class="QLineEdit" name="lineEdit_32"/>
+             </item>
+            </layout>
+           </item>
+           <item>
+            <layout class="QHBoxLayout" name="horizontalLayout_32">
+             <item>
+              <widget class="QCheckBox" name="checkBox_25">
+               <property name="text">
+                <string/>
+               </property>
+              </widget>
+             </item>
+             <item>
+              <widget class="QLineEdit" name="lineEdit_34"/>
+             </item>
+            </layout>
+           </item>
+           <item>
+            <layout class="QHBoxLayout" name="horizontalLayout_33">
+             <item>
+              <widget class="QCheckBox" name="checkBox_26">
+               <property name="text">
+                <string/>
+               </property>
+              </widget>
+             </item>
+             <item>
+              <widget class="QLineEdit" name="lineEdit_35"/>
+             </item>
+            </layout>
+           </item>
+          </layout>
+         </item>
+         <item row="3" column="0">
+          <layout class="QVBoxLayout" name="spells1_vl">
+           <item>
+            <layout class="QHBoxLayout" name="horizontalLayout_18">
+             <item alignment="Qt::AlignBottom">
+              <widget class="QLabel" name="label_9">
+               <property name="text">
+                <string>Spell Level</string>
+               </property>
+              </widget>
+             </item>
+             <item alignment="Qt::AlignBottom">
+              <widget class="QLabel" name="label_8">
+               <property name="text">
+                <string>Slots Total</string>
+               </property>
+              </widget>
+             </item>
+             <item alignment="Qt::AlignBottom">
+              <widget class="QLabel" name="label_10">
+               <property name="text">
+                <string>Slots Expended</string>
+               </property>
+              </widget>
+             </item>
+            </layout>
+           </item>
+           <item>
+            <layout class="QHBoxLayout" name="horizontalLayout_4">
+             <item>
+              <widget class="QLabel" name="label_7">
+               <property name="text">
+                <string>1</string>
+               </property>
+              </widget>
+             </item>
+             <item>
+              <widget class="QSpinBox" name="spinBox_4"/>
+             </item>
+             <item>
+              <widget class="QSpinBox" name="spinBox_5"/>
+             </item>
+            </layout>
+           </item>
+           <item>
+            <widget class="Line" name="line_2">
+             <property name="orientation">
+              <enum>Qt::Horizontal</enum>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <layout class="QHBoxLayout" name="horizontalLayout_7">
+             <item>
+              <widget class="QCheckBox" name="checkBox_3">
+               <property name="text">
+                <string/>
+               </property>
+              </widget>
+             </item>
+             <item>
+              <widget class="QLineEdit" name="lineEdit_12"/>
+             </item>
+            </layout>
+           </item>
+           <item>
+            <layout class="QHBoxLayout" name="horizontalLayout_6">
+             <item>
+              <widget class="QCheckBox" name="checkBox_2">
+               <property name="text">
+                <string/>
+               </property>
+              </widget>
+             </item>
+             <item>
+              <widget class="QLineEdit" name="lineEdit_11"/>
+             </item>
+            </layout>
+           </item>
+           <item>
+            <layout class="QHBoxLayout" name="horizontalLayout_12">
+             <item>
+              <widget class="QCheckBox" name="checkBox_8">
+               <property name="text">
+                <string/>
+               </property>
+              </widget>
+             </item>
+             <item>
+              <widget class="QLineEdit" name="lineEdit_17"/>
+             </item>
+            </layout>
+           </item>
+           <item>
+            <layout class="QHBoxLayout" name="horizontalLayout_3">
+             <item>
+              <widget class="QCheckBox" name="checkBox">
+               <property name="text">
+                <string/>
+               </property>
+              </widget>
+             </item>
+             <item>
+              <widget class="QLineEdit" name="lineEdit_10"/>
+             </item>
+            </layout>
+           </item>
+           <item>
+            <layout class="QHBoxLayout" name="horizontalLayout_8">
+             <item>
+              <widget class="QCheckBox" name="checkBox_4">
+               <property name="text">
+                <string/>
+               </property>
+              </widget>
+             </item>
+             <item>
+              <widget class="QLineEdit" name="lineEdit_13"/>
+             </item>
+            </layout>
+           </item>
+           <item>
+            <layout class="QHBoxLayout" name="horizontalLayout_10">
+             <item>
+              <widget class="QCheckBox" name="checkBox_6">
+               <property name="text">
+                <string/>
+               </property>
+              </widget>
+             </item>
+             <item>
+              <widget class="QLineEdit" name="lineEdit_15"/>
+             </item>
+            </layout>
+           </item>
+           <item>
+            <layout class="QHBoxLayout" name="horizontalLayout_9">
+             <item>
+              <widget class="QCheckBox" name="checkBox_5">
+               <property name="text">
+                <string/>
+               </property>
+              </widget>
+             </item>
+             <item>
+              <widget class="QLineEdit" name="lineEdit_14"/>
+             </item>
+            </layout>
+           </item>
+           <item>
+            <layout class="QHBoxLayout" name="horizontalLayout_17">
+             <item>
+              <widget class="QCheckBox" name="checkBox_13">
+               <property name="text">
+                <string/>
+               </property>
+              </widget>
+             </item>
+             <item>
+              <widget class="QLineEdit" name="lineEdit_22"/>
+             </item>
+            </layout>
+           </item>
+           <item>
+            <layout class="QHBoxLayout" name="horizontalLayout_16">
+             <item>
+              <widget class="QCheckBox" name="checkBox_12">
+               <property name="text">
+                <string/>
+               </property>
+              </widget>
+             </item>
+             <item>
+              <widget class="QLineEdit" name="lineEdit_21"/>
+             </item>
+            </layout>
+           </item>
+           <item>
+            <layout class="QHBoxLayout" name="horizontalLayout_14">
+             <item>
+              <widget class="QCheckBox" name="checkBox_10">
+               <property name="text">
+                <string/>
+               </property>
+              </widget>
+             </item>
+             <item>
+              <widget class="QLineEdit" name="lineEdit_19"/>
+             </item>
+            </layout>
+           </item>
+           <item>
+            <layout class="QHBoxLayout" name="horizontalLayout_13">
+             <item>
+              <widget class="QCheckBox" name="checkBox_9">
+               <property name="text">
+                <string/>
+               </property>
+              </widget>
+             </item>
+             <item>
+              <widget class="QLineEdit" name="lineEdit_18"/>
+             </item>
+            </layout>
+           </item>
+           <item>
+            <layout class="QHBoxLayout" name="horizontalLayout_11">
+             <item>
+              <widget class="QCheckBox" name="checkBox_7">
+               <property name="text">
+                <string/>
+               </property>
+              </widget>
+             </item>
+             <item>
+              <widget class="QLineEdit" name="lineEdit_16"/>
+             </item>
+            </layout>
+           </item>
+          </layout>
+         </item>
+         <item row="3" column="4">
+          <layout class="QVBoxLayout" name="verticalLayout_8">
+           <item>
+            <layout class="QHBoxLayout" name="horizontalLayout_34">
+             <item alignment="Qt::AlignBottom">
+              <widget class="QLabel" name="label_15">
+               <property name="text">
+                <string>Spell Level</string>
+               </property>
+              </widget>
+             </item>
+             <item alignment="Qt::AlignBottom">
+              <widget class="QLabel" name="label_16">
+               <property name="text">
+                <string>Slots Total</string>
+               </property>
+              </widget>
+             </item>
+             <item alignment="Qt::AlignBottom">
+              <widget class="QLabel" name="label_17">
+               <property name="text">
+                <string>Slots Expended</string>
+               </property>
+              </widget>
+             </item>
+            </layout>
+           </item>
+           <item>
+            <layout class="QHBoxLayout" name="horizontalLayout_35">
+             <item>
+              <widget class="QLabel" name="label_18">
+               <property name="text">
+                <string>5</string>
+               </property>
+              </widget>
+             </item>
+             <item>
+              <widget class="QSpinBox" name="spinBox_8"/>
+             </item>
+             <item>
+              <widget class="QSpinBox" name="spinBox_9"/>
+             </item>
+            </layout>
+           </item>
+           <item>
+            <widget class="Line" name="line_4">
+             <property name="orientation">
+              <enum>Qt::Horizontal</enum>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <layout class="QHBoxLayout" name="horizontalLayout_36">
+             <item>
+              <widget class="QCheckBox" name="checkBox_27">
+               <property name="text">
+                <string/>
+               </property>
+              </widget>
+             </item>
+             <item>
+              <widget class="QLineEdit" name="lineEdit_36"/>
+             </item>
+            </layout>
+           </item>
+           <item>
+            <layout class="QHBoxLayout" name="horizontalLayout_37">
+             <item>
+              <widget class="QCheckBox" name="checkBox_28">
+               <property name="text">
+                <string/>
+               </property>
+              </widget>
+             </item>
+             <item>
+              <widget class="QLineEdit" name="lineEdit_37"/>
+             </item>
+            </layout>
+           </item>
+           <item>
+            <layout class="QHBoxLayout" name="horizontalLayout_38">
+             <item>
+              <widget class="QCheckBox" name="checkBox_29">
+               <property name="text">
+                <string/>
+               </property>
+              </widget>
+             </item>
+             <item>
+              <widget class="QLineEdit" name="lineEdit_38"/>
+             </item>
+            </layout>
+           </item>
+           <item>
+            <layout class="QHBoxLayout" name="horizontalLayout_39">
+             <item>
+              <widget class="QCheckBox" name="checkBox_30">
+               <property name="text">
+                <string/>
+               </property>
+              </widget>
+             </item>
+             <item>
+              <widget class="QLineEdit" name="lineEdit_39"/>
+             </item>
+            </layout>
+           </item>
+           <item>
+            <layout class="QHBoxLayout" name="horizontalLayout_40">
+             <item>
+              <widget class="QCheckBox" name="checkBox_31">
+               <property name="text">
+                <string/>
+               </property>
+              </widget>
+             </item>
+             <item>
+              <widget class="QLineEdit" name="lineEdit_40"/>
+             </item>
+            </layout>
+           </item>
+           <item>
+            <layout class="QHBoxLayout" name="horizontalLayout_41">
+             <item>
+              <widget class="QCheckBox" name="checkBox_32">
+               <property name="text">
+                <string/>
+               </property>
+              </widget>
+             </item>
+             <item>
+              <widget class="QLineEdit" name="lineEdit_41"/>
+             </item>
+            </layout>
+           </item>
+           <item>
+            <layout class="QHBoxLayout" name="horizontalLayout_42">
+             <item>
+              <widget class="QCheckBox" name="checkBox_33">
+               <property name="text">
+                <string/>
+               </property>
+              </widget>
+             </item>
+             <item>
+              <widget class="QLineEdit" name="lineEdit_42"/>
+             </item>
+            </layout>
+           </item>
+           <item>
+            <layout class="QHBoxLayout" name="horizontalLayout_43">
+             <item>
+              <widget class="QCheckBox" name="checkBox_34">
+               <property name="text">
+                <string/>
+               </property>
+              </widget>
+             </item>
+             <item>
+              <widget class="QLineEdit" name="lineEdit_43"/>
+             </item>
+            </layout>
+           </item>
+           <item>
+            <layout class="QHBoxLayout" name="horizontalLayout_44">
+             <item>
+              <widget class="QCheckBox" name="checkBox_35">
+               <property name="text">
+                <string/>
+               </property>
+              </widget>
+             </item>
+             <item>
+              <widget class="QLineEdit" name="lineEdit_44"/>
+             </item>
+            </layout>
+           </item>
+           <item>
+            <layout class="QHBoxLayout" name="horizontalLayout_45">
+             <item>
+              <widget class="QCheckBox" name="checkBox_36">
+               <property name="text">
+                <string/>
+               </property>
+              </widget>
+             </item>
+             <item>
+              <widget class="QLineEdit" name="lineEdit_45"/>
+             </item>
+            </layout>
+           </item>
+           <item>
+            <layout class="QHBoxLayout" name="horizontalLayout_47">
+             <item>
+              <widget class="QCheckBox" name="checkBox_38">
+               <property name="text">
+                <string/>
+               </property>
+              </widget>
+             </item>
+             <item>
+              <widget class="QLineEdit" name="lineEdit_47"/>
+             </item>
+            </layout>
+           </item>
+           <item>
+            <layout class="QHBoxLayout" name="horizontalLayout_48">
+             <item>
+              <widget class="QCheckBox" name="checkBox_39">
+               <property name="text">
+                <string/>
+               </property>
+              </widget>
+             </item>
+             <item>
+              <widget class="QLineEdit" name="lineEdit_48"/>
+             </item>
+            </layout>
+           </item>
+          </layout>
+         </item>
+         <item row="1" column="0">
+          <layout class="QVBoxLayout" name="verticalLayout_10">
+           <item>
+            <layout class="QHBoxLayout" name="horizontalLayout_64">
+             <item alignment="Qt::AlignBottom">
+              <widget class="QLabel" name="label_23">
+               <property name="text">
+                <string>Spell Level</string>
+               </property>
+              </widget>
+             </item>
+             <item alignment="Qt::AlignBottom">
+              <widget class="QLabel" name="label_24">
+               <property name="text">
+                <string>Slots Total</string>
+               </property>
+              </widget>
+             </item>
+             <item alignment="Qt::AlignBottom">
+              <widget class="QLabel" name="label_25">
+               <property name="text">
+                <string>Slots Expended</string>
+               </property>
+              </widget>
+             </item>
+            </layout>
+           </item>
+           <item>
+            <layout class="QHBoxLayout" name="horizontalLayout_65">
+             <item>
+              <widget class="QLabel" name="label_26">
+               <property name="text">
+                <string>Cantrips</string>
+               </property>
+              </widget>
+             </item>
+             <item>
+              <widget class="QSpinBox" name="spinBox_12"/>
+             </item>
+             <item>
+              <widget class="QSpinBox" name="spinBox_13"/>
+             </item>
+            </layout>
+           </item>
+           <item>
+            <widget class="Line" name="line_8">
+             <property name="orientation">
+              <enum>Qt::Horizontal</enum>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <layout class="QHBoxLayout" name="horizontalLayout_66">
+             <item>
+              <widget class="QCheckBox" name="checkBox_53">
+               <property name="text">
+                <string/>
+               </property>
+              </widget>
+             </item>
+             <item>
+              <widget class="QLineEdit" name="lineEdit_62"/>
+             </item>
+            </layout>
+           </item>
+           <item>
+            <layout class="QHBoxLayout" name="horizontalLayout_67">
+             <item>
+              <widget class="QCheckBox" name="checkBox_54">
+               <property name="text">
+                <string/>
+               </property>
+              </widget>
+             </item>
+             <item>
+              <widget class="QLineEdit" name="lineEdit_63"/>
+             </item>
+            </layout>
+           </item>
+           <item>
+            <layout class="QHBoxLayout" name="horizontalLayout_68">
+             <item>
+              <widget class="QCheckBox" name="checkBox_55">
+               <property name="text">
+                <string/>
+               </property>
+              </widget>
+             </item>
+             <item>
+              <widget class="QLineEdit" name="lineEdit_64"/>
+             </item>
+            </layout>
+           </item>
+           <item>
+            <layout class="QHBoxLayout" name="horizontalLayout_69">
+             <item>
+              <widget class="QCheckBox" name="checkBox_56">
+               <property name="text">
+                <string/>
+               </property>
+              </widget>
+             </item>
+             <item>
+              <widget class="QLineEdit" name="lineEdit_65"/>
+             </item>
+            </layout>
+           </item>
+           <item>
+            <layout class="QHBoxLayout" name="horizontalLayout_70">
+             <item>
+              <widget class="QCheckBox" name="checkBox_57">
+               <property name="text">
+                <string/>
+               </property>
+              </widget>
+             </item>
+             <item>
+              <widget class="QLineEdit" name="lineEdit_66"/>
+             </item>
+            </layout>
+           </item>
+           <item>
+            <layout class="QHBoxLayout" name="horizontalLayout_71">
+             <item>
+              <widget class="QCheckBox" name="checkBox_58">
+               <property name="text">
+                <string/>
+               </property>
+              </widget>
+             </item>
+             <item>
+              <widget class="QLineEdit" name="lineEdit_67"/>
+             </item>
+            </layout>
+           </item>
+           <item>
+            <layout class="QHBoxLayout" name="horizontalLayout_72">
+             <item>
+              <widget class="QCheckBox" name="checkBox_59">
+               <property name="text">
+                <string/>
+               </property>
+              </widget>
+             </item>
+             <item>
+              <widget class="QLineEdit" name="lineEdit_68"/>
+             </item>
+            </layout>
+           </item>
+           <item>
+            <layout class="QHBoxLayout" name="horizontalLayout_73">
+             <item>
+              <widget class="QCheckBox" name="checkBox_60">
+               <property name="text">
+                <string/>
+               </property>
+              </widget>
+             </item>
+             <item>
+              <widget class="QLineEdit" name="lineEdit_69"/>
+             </item>
+            </layout>
+           </item>
+           <item>
+            <layout class="QHBoxLayout" name="horizontalLayout_74">
+             <item>
+              <widget class="QCheckBox" name="checkBox_61">
+               <property name="text">
+                <string/>
+               </property>
+              </widget>
+             </item>
+             <item>
+              <widget class="QLineEdit" name="lineEdit_70"/>
+             </item>
+            </layout>
+           </item>
+           <item>
+            <layout class="QHBoxLayout" name="horizontalLayout_75">
+             <item>
+              <widget class="QCheckBox" name="checkBox_62">
+               <property name="text">
+                <string/>
+               </property>
+              </widget>
+             </item>
+             <item>
+              <widget class="QLineEdit" name="lineEdit_71"/>
+             </item>
+            </layout>
+           </item>
+           <item>
+            <layout class="QHBoxLayout" name="horizontalLayout_76">
+             <item>
+              <widget class="QCheckBox" name="checkBox_63">
+               <property name="text">
+                <string/>
+               </property>
+              </widget>
+             </item>
+             <item>
+              <widget class="QLineEdit" name="lineEdit_72"/>
+             </item>
+            </layout>
+           </item>
+           <item>
+            <layout class="QHBoxLayout" name="horizontalLayout_77">
+             <item>
+              <widget class="QCheckBox" name="checkBox_64">
+               <property name="text">
+                <string/>
+               </property>
+              </widget>
+             </item>
+             <item>
+              <widget class="QLineEdit" name="lineEdit_73"/>
+             </item>
+            </layout>
+           </item>
+          </layout>
+         </item>
+         <item row="1" column="6">
+          <layout class="QVBoxLayout" name="verticalLayout_13">
+           <item>
+            <layout class="QHBoxLayout" name="horizontalLayout_109">
+             <item alignment="Qt::AlignBottom">
+              <widget class="QLabel" name="label_35">
+               <property name="text">
+                <string>Spell Level</string>
+               </property>
+              </widget>
+             </item>
+             <item alignment="Qt::AlignBottom">
+              <widget class="QLabel" name="label_36">
+               <property name="text">
+                <string>Slots Total</string>
+               </property>
+              </widget>
+             </item>
+             <item alignment="Qt::AlignBottom">
+              <widget class="QLabel" name="label_37">
+               <property name="text">
+                <string>Slots Expended</string>
+               </property>
+              </widget>
+             </item>
+            </layout>
+           </item>
+           <item>
+            <layout class="QHBoxLayout" name="horizontalLayout_110">
+             <item>
+              <widget class="QLabel" name="label_38">
+               <property name="text">
+                <string>6</string>
+               </property>
+              </widget>
+             </item>
+             <item>
+              <widget class="QSpinBox" name="spinBox_18"/>
+             </item>
+             <item>
+              <widget class="QSpinBox" name="spinBox_19"/>
+             </item>
+            </layout>
+           </item>
+           <item>
+            <widget class="Line" name="line_11">
+             <property name="orientation">
+              <enum>Qt::Horizontal</enum>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <layout class="QHBoxLayout" name="horizontalLayout_111">
+             <item>
+              <widget class="QCheckBox" name="checkBox_92">
+               <property name="text">
+                <string/>
+               </property>
+              </widget>
+             </item>
+             <item>
+              <widget class="QLineEdit" name="lineEdit_101"/>
+             </item>
+            </layout>
+           </item>
+           <item>
+            <layout class="QHBoxLayout" name="horizontalLayout_112">
+             <item>
+              <widget class="QCheckBox" name="checkBox_93">
+               <property name="text">
+                <string/>
+               </property>
+              </widget>
+             </item>
+             <item>
+              <widget class="QLineEdit" name="lineEdit_102"/>
+             </item>
+            </layout>
+           </item>
+           <item>
+            <layout class="QHBoxLayout" name="horizontalLayout_113">
+             <item>
+              <widget class="QCheckBox" name="checkBox_94">
+               <property name="text">
+                <string/>
+               </property>
+              </widget>
+             </item>
+             <item>
+              <widget class="QLineEdit" name="lineEdit_103"/>
+             </item>
+            </layout>
+           </item>
+           <item>
+            <layout class="QHBoxLayout" name="horizontalLayout_114">
+             <item>
+              <widget class="QCheckBox" name="checkBox_95">
+               <property name="text">
+                <string/>
+               </property>
+              </widget>
+             </item>
+             <item>
+              <widget class="QLineEdit" name="lineEdit_104"/>
+             </item>
+            </layout>
+           </item>
+           <item>
+            <layout class="QHBoxLayout" name="horizontalLayout_115">
+             <item>
+              <widget class="QCheckBox" name="checkBox_96">
+               <property name="text">
+                <string/>
+               </property>
+              </widget>
+             </item>
+             <item>
+              <widget class="QLineEdit" name="lineEdit_105"/>
+             </item>
+            </layout>
+           </item>
+           <item>
+            <layout class="QHBoxLayout" name="horizontalLayout_116">
+             <item>
+              <widget class="QCheckBox" name="checkBox_97">
+               <property name="text">
+                <string/>
+               </property>
+              </widget>
+             </item>
+             <item>
+              <widget class="QLineEdit" name="lineEdit_106"/>
+             </item>
+            </layout>
+           </item>
+           <item>
+            <layout class="QHBoxLayout" name="horizontalLayout_117">
+             <item>
+              <widget class="QCheckBox" name="checkBox_98">
+               <property name="text">
+                <string/>
+               </property>
+              </widget>
+             </item>
+             <item>
+              <widget class="QLineEdit" name="lineEdit_107"/>
+             </item>
+            </layout>
+           </item>
+           <item>
+            <layout class="QHBoxLayout" name="horizontalLayout_118">
+             <item>
+              <widget class="QCheckBox" name="checkBox_99">
+               <property name="text">
+                <string/>
+               </property>
+              </widget>
+             </item>
+             <item>
+              <widget class="QLineEdit" name="lineEdit_108"/>
+             </item>
+            </layout>
+           </item>
+           <item>
+            <layout class="QHBoxLayout" name="horizontalLayout_119">
+             <item>
+              <widget class="QCheckBox" name="checkBox_100">
+               <property name="text">
+                <string/>
+               </property>
+              </widget>
+             </item>
+             <item>
+              <widget class="QLineEdit" name="lineEdit_109"/>
+             </item>
+            </layout>
+           </item>
+           <item>
+            <layout class="QHBoxLayout" name="horizontalLayout_120">
+             <item>
+              <widget class="QCheckBox" name="checkBox_101">
+               <property name="text">
+                <string/>
+               </property>
+              </widget>
+             </item>
+             <item>
+              <widget class="QLineEdit" name="lineEdit_110"/>
+             </item>
+            </layout>
+           </item>
+           <item>
+            <layout class="QHBoxLayout" name="horizontalLayout_121">
+             <item>
+              <widget class="QCheckBox" name="checkBox_102">
+               <property name="text">
+                <string/>
+               </property>
+              </widget>
+             </item>
+             <item>
+              <widget class="QLineEdit" name="lineEdit_111"/>
+             </item>
+            </layout>
+           </item>
+           <item>
+            <layout class="QHBoxLayout" name="horizontalLayout_122">
+             <item>
+              <widget class="QCheckBox" name="checkBox_103">
+               <property name="text">
+                <string/>
+               </property>
+              </widget>
+             </item>
+             <item>
+              <widget class="QLineEdit" name="lineEdit_112"/>
+             </item>
+            </layout>
+           </item>
+          </layout>
+         </item>
+         <item row="1" column="2">
+          <layout class="QVBoxLayout" name="verticalLayout_11">
+           <item>
+            <layout class="QHBoxLayout" name="horizontalLayout_79">
+             <item alignment="Qt::AlignBottom">
+              <widget class="QLabel" name="label_27">
+               <property name="text">
+                <string>Spell Level</string>
+               </property>
+              </widget>
+             </item>
+             <item alignment="Qt::AlignBottom">
+              <widget class="QLabel" name="label_28">
+               <property name="text">
+                <string>Slots Total</string>
+               </property>
+              </widget>
+             </item>
+             <item alignment="Qt::AlignBottom">
+              <widget class="QLabel" name="label_29">
+               <property name="text">
+                <string>Slots Expended</string>
+               </property>
+              </widget>
+             </item>
+            </layout>
+           </item>
+           <item>
+            <layout class="QHBoxLayout" name="horizontalLayout_80">
+             <item>
+              <widget class="QLabel" name="label_30">
+               <property name="text">
+                <string>2</string>
+               </property>
+              </widget>
+             </item>
+             <item>
+              <widget class="QSpinBox" name="spinBox_14"/>
+             </item>
+             <item>
+              <widget class="QSpinBox" name="spinBox_15"/>
+             </item>
+            </layout>
+           </item>
+           <item>
+            <widget class="Line" name="line_9">
+             <property name="orientation">
+              <enum>Qt::Horizontal</enum>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <layout class="QHBoxLayout" name="horizontalLayout_81">
+             <item>
+              <widget class="QCheckBox" name="checkBox_66">
+               <property name="text">
+                <string/>
+               </property>
+              </widget>
+             </item>
+             <item>
+              <widget class="QLineEdit" name="lineEdit_75"/>
+             </item>
+            </layout>
+           </item>
+           <item>
+            <layout class="QHBoxLayout" name="horizontalLayout_82">
+             <item>
+              <widget class="QCheckBox" name="checkBox_67">
+               <property name="text">
+                <string/>
+               </property>
+              </widget>
+             </item>
+             <item>
+              <widget class="QLineEdit" name="lineEdit_76"/>
+             </item>
+            </layout>
+           </item>
+           <item>
+            <layout class="QHBoxLayout" name="horizontalLayout_83">
+             <item>
+              <widget class="QCheckBox" name="checkBox_68">
+               <property name="text">
+                <string/>
+               </property>
+              </widget>
+             </item>
+             <item>
+              <widget class="QLineEdit" name="lineEdit_77"/>
+             </item>
+            </layout>
+           </item>
+           <item>
+            <layout class="QHBoxLayout" name="horizontalLayout_84">
+             <item>
+              <widget class="QCheckBox" name="checkBox_69">
+               <property name="text">
+                <string/>
+               </property>
+              </widget>
+             </item>
+             <item>
+              <widget class="QLineEdit" name="lineEdit_78"/>
+             </item>
+            </layout>
+           </item>
+           <item>
+            <layout class="QHBoxLayout" name="horizontalLayout_85">
+             <item>
+              <widget class="QCheckBox" name="checkBox_70">
+               <property name="text">
+                <string/>
+               </property>
+              </widget>
+             </item>
+             <item>
+              <widget class="QLineEdit" name="lineEdit_79"/>
+             </item>
+            </layout>
+           </item>
+           <item>
+            <layout class="QHBoxLayout" name="horizontalLayout_86">
+             <item>
+              <widget class="QCheckBox" name="checkBox_71">
+               <property name="text">
+                <string/>
+               </property>
+              </widget>
+             </item>
+             <item>
+              <widget class="QLineEdit" name="lineEdit_80"/>
+             </item>
+            </layout>
+           </item>
+           <item>
+            <layout class="QHBoxLayout" name="horizontalLayout_87">
+             <item>
+              <widget class="QCheckBox" name="checkBox_72">
+               <property name="text">
+                <string/>
+               </property>
+              </widget>
+             </item>
+             <item>
+              <widget class="QLineEdit" name="lineEdit_81"/>
+             </item>
+            </layout>
+           </item>
+           <item>
+            <layout class="QHBoxLayout" name="horizontalLayout_88">
+             <item>
+              <widget class="QCheckBox" name="checkBox_73">
+               <property name="text">
+                <string/>
+               </property>
+              </widget>
+             </item>
+             <item>
+              <widget class="QLineEdit" name="lineEdit_82"/>
+             </item>
+            </layout>
+           </item>
+           <item>
+            <layout class="QHBoxLayout" name="horizontalLayout_89">
+             <item>
+              <widget class="QCheckBox" name="checkBox_74">
+               <property name="text">
+                <string/>
+               </property>
+              </widget>
+             </item>
+             <item>
+              <widget class="QLineEdit" name="lineEdit_83"/>
+             </item>
+            </layout>
+           </item>
+           <item>
+            <layout class="QHBoxLayout" name="horizontalLayout_90">
+             <item>
+              <widget class="QCheckBox" name="checkBox_75">
+               <property name="text">
+                <string/>
+               </property>
+              </widget>
+             </item>
+             <item>
+              <widget class="QLineEdit" name="lineEdit_84"/>
+             </item>
+            </layout>
+           </item>
+           <item>
+            <layout class="QHBoxLayout" name="horizontalLayout_91">
+             <item>
+              <widget class="QCheckBox" name="checkBox_76">
+               <property name="text">
+                <string/>
+               </property>
+              </widget>
+             </item>
+             <item>
+              <widget class="QLineEdit" name="lineEdit_85"/>
+             </item>
+            </layout>
+           </item>
+           <item>
+            <layout class="QHBoxLayout" name="horizontalLayout_92">
+             <item>
+              <widget class="QCheckBox" name="checkBox_77">
+               <property name="text">
+                <string/>
+               </property>
+              </widget>
+             </item>
+             <item>
+              <widget class="QLineEdit" name="lineEdit_86"/>
+             </item>
+            </layout>
+           </item>
+          </layout>
+         </item>
+         <item row="1" column="4">
+          <layout class="QVBoxLayout" name="verticalLayout_12">
+           <item>
+            <layout class="QHBoxLayout" name="horizontalLayout_94">
+             <item alignment="Qt::AlignBottom">
+              <widget class="QLabel" name="label_31">
+               <property name="text">
+                <string>Spell Level</string>
+               </property>
+              </widget>
+             </item>
+             <item alignment="Qt::AlignBottom">
+              <widget class="QLabel" name="label_32">
+               <property name="text">
+                <string>Slots Total</string>
+               </property>
+              </widget>
+             </item>
+             <item alignment="Qt::AlignBottom">
+              <widget class="QLabel" name="label_33">
+               <property name="text">
+                <string>Slots Expended</string>
+               </property>
+              </widget>
+             </item>
+            </layout>
+           </item>
+           <item>
+            <layout class="QHBoxLayout" name="horizontalLayout_95">
+             <item>
+              <widget class="QLabel" name="label_34">
+               <property name="text">
+                <string>4</string>
+               </property>
+              </widget>
+             </item>
+             <item>
+              <widget class="QSpinBox" name="spinBox_16"/>
+             </item>
+             <item>
+              <widget class="QSpinBox" name="spinBox_17"/>
+             </item>
+            </layout>
+           </item>
+           <item>
+            <widget class="Line" name="line_10">
+             <property name="orientation">
+              <enum>Qt::Horizontal</enum>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <layout class="QHBoxLayout" name="horizontalLayout_96">
+             <item>
+              <widget class="QCheckBox" name="checkBox_79">
+               <property name="text">
+                <string/>
+               </property>
+              </widget>
+             </item>
+             <item>
+              <widget class="QLineEdit" name="lineEdit_88"/>
+             </item>
+            </layout>
+           </item>
+           <item>
+            <layout class="QHBoxLayout" name="horizontalLayout_97">
+             <item>
+              <widget class="QCheckBox" name="checkBox_80">
+               <property name="text">
+                <string/>
+               </property>
+              </widget>
+             </item>
+             <item>
+              <widget class="QLineEdit" name="lineEdit_89"/>
+             </item>
+            </layout>
+           </item>
+           <item>
+            <layout class="QHBoxLayout" name="horizontalLayout_98">
+             <item>
+              <widget class="QCheckBox" name="checkBox_81">
+               <property name="text">
+                <string/>
+               </property>
+              </widget>
+             </item>
+             <item>
+              <widget class="QLineEdit" name="lineEdit_90"/>
+             </item>
+            </layout>
+           </item>
+           <item>
+            <layout class="QHBoxLayout" name="horizontalLayout_99">
+             <item>
+              <widget class="QCheckBox" name="checkBox_82">
+               <property name="text">
+                <string/>
+               </property>
+              </widget>
+             </item>
+             <item>
+              <widget class="QLineEdit" name="lineEdit_91"/>
+             </item>
+            </layout>
+           </item>
+           <item>
+            <layout class="QHBoxLayout" name="horizontalLayout_100">
+             <item>
+              <widget class="QCheckBox" name="checkBox_83">
+               <property name="text">
+                <string/>
+               </property>
+              </widget>
+             </item>
+             <item>
+              <widget class="QLineEdit" name="lineEdit_92"/>
+             </item>
+            </layout>
+           </item>
+           <item>
+            <layout class="QHBoxLayout" name="horizontalLayout_101">
+             <item>
+              <widget class="QCheckBox" name="checkBox_84">
+               <property name="text">
+                <string/>
+               </property>
+              </widget>
+             </item>
+             <item>
+              <widget class="QLineEdit" name="lineEdit_93"/>
+             </item>
+            </layout>
+           </item>
+           <item>
+            <layout class="QHBoxLayout" name="horizontalLayout_102">
+             <item>
+              <widget class="QCheckBox" name="checkBox_85">
+               <property name="text">
+                <string/>
+               </property>
+              </widget>
+             </item>
+             <item>
+              <widget class="QLineEdit" name="lineEdit_94"/>
+             </item>
+            </layout>
+           </item>
+           <item>
+            <layout class="QHBoxLayout" name="horizontalLayout_103">
+             <item>
+              <widget class="QCheckBox" name="checkBox_86">
+               <property name="text">
+                <string/>
+               </property>
+              </widget>
+             </item>
+             <item>
+              <widget class="QLineEdit" name="lineEdit_95"/>
+             </item>
+            </layout>
+           </item>
+           <item>
+            <layout class="QHBoxLayout" name="horizontalLayout_104">
+             <item>
+              <widget class="QCheckBox" name="checkBox_87">
+               <property name="text">
+                <string/>
+               </property>
+              </widget>
+             </item>
+             <item>
+              <widget class="QLineEdit" name="lineEdit_96"/>
+             </item>
+            </layout>
+           </item>
+           <item>
+            <layout class="QHBoxLayout" name="horizontalLayout_105">
+             <item>
+              <widget class="QCheckBox" name="checkBox_88">
+               <property name="text">
+                <string/>
+               </property>
+              </widget>
+             </item>
+             <item>
+              <widget class="QLineEdit" name="lineEdit_97"/>
+             </item>
+            </layout>
+           </item>
+           <item>
+            <layout class="QHBoxLayout" name="horizontalLayout_106">
+             <item>
+              <widget class="QCheckBox" name="checkBox_89">
+               <property name="text">
+                <string/>
+               </property>
+              </widget>
+             </item>
+             <item>
+              <widget class="QLineEdit" name="lineEdit_98"/>
+             </item>
+            </layout>
+           </item>
+           <item>
+            <layout class="QHBoxLayout" name="horizontalLayout_107">
+             <item>
+              <widget class="QCheckBox" name="checkBox_90">
+               <property name="text">
+                <string/>
+               </property>
+              </widget>
+             </item>
+             <item>
+              <widget class="QLineEdit" name="lineEdit_99"/>
+             </item>
+            </layout>
+           </item>
+          </layout>
+         </item>
+         <item row="3" column="6">
+          <layout class="QVBoxLayout" name="verticalLayout_14">
+           <item>
+            <layout class="QHBoxLayout" name="horizontalLayout_124">
+             <item alignment="Qt::AlignBottom">
+              <widget class="QLabel" name="label_39">
+               <property name="text">
+                <string>Spell Level</string>
+               </property>
+              </widget>
+             </item>
+             <item alignment="Qt::AlignBottom">
+              <widget class="QLabel" name="label_40">
+               <property name="text">
+                <string>Slots Total</string>
+               </property>
+              </widget>
+             </item>
+             <item alignment="Qt::AlignBottom">
+              <widget class="QLabel" name="label_41">
+               <property name="text">
+                <string>Slots Expended</string>
+               </property>
+              </widget>
+             </item>
+            </layout>
+           </item>
+           <item>
+            <layout class="QHBoxLayout" name="horizontalLayout_125">
+             <item>
+              <widget class="QLabel" name="label_42">
+               <property name="text">
+                <string>7</string>
+               </property>
+              </widget>
+             </item>
+             <item>
+              <widget class="QSpinBox" name="spinBox_20"/>
+             </item>
+             <item>
+              <widget class="QSpinBox" name="spinBox_21"/>
+             </item>
+            </layout>
+           </item>
+           <item>
+            <widget class="Line" name="line_12">
+             <property name="orientation">
+              <enum>Qt::Horizontal</enum>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <layout class="QHBoxLayout" name="horizontalLayout_126">
+             <item>
+              <widget class="QCheckBox" name="checkBox_105">
+               <property name="text">
+                <string/>
+               </property>
+              </widget>
+             </item>
+             <item>
+              <widget class="QLineEdit" name="lineEdit_114"/>
+             </item>
+            </layout>
+           </item>
+           <item>
+            <layout class="QHBoxLayout" name="horizontalLayout_127">
+             <item>
+              <widget class="QCheckBox" name="checkBox_106">
+               <property name="text">
+                <string/>
+               </property>
+              </widget>
+             </item>
+             <item>
+              <widget class="QLineEdit" name="lineEdit_115"/>
+             </item>
+            </layout>
+           </item>
+           <item>
+            <layout class="QHBoxLayout" name="horizontalLayout_128">
+             <item>
+              <widget class="QCheckBox" name="checkBox_107">
+               <property name="text">
+                <string/>
+               </property>
+              </widget>
+             </item>
+             <item>
+              <widget class="QLineEdit" name="lineEdit_116"/>
+             </item>
+            </layout>
+           </item>
+           <item>
+            <layout class="QHBoxLayout" name="horizontalLayout_129">
+             <item>
+              <widget class="QCheckBox" name="checkBox_108">
+               <property name="text">
+                <string/>
+               </property>
+              </widget>
+             </item>
+             <item>
+              <widget class="QLineEdit" name="lineEdit_117"/>
+             </item>
+            </layout>
+           </item>
+           <item>
+            <layout class="QHBoxLayout" name="horizontalLayout_130">
+             <item>
+              <widget class="QCheckBox" name="checkBox_109">
+               <property name="text">
+                <string/>
+               </property>
+              </widget>
+             </item>
+             <item>
+              <widget class="QLineEdit" name="lineEdit_118"/>
+             </item>
+            </layout>
+           </item>
+           <item>
+            <layout class="QHBoxLayout" name="horizontalLayout_131">
+             <item>
+              <widget class="QCheckBox" name="checkBox_110">
+               <property name="text">
+                <string/>
+               </property>
+              </widget>
+             </item>
+             <item>
+              <widget class="QLineEdit" name="lineEdit_119"/>
+             </item>
+            </layout>
+           </item>
+           <item>
+            <layout class="QHBoxLayout" name="horizontalLayout_132">
+             <item>
+              <widget class="QCheckBox" name="checkBox_111">
+               <property name="text">
+                <string/>
+               </property>
+              </widget>
+             </item>
+             <item>
+              <widget class="QLineEdit" name="lineEdit_120"/>
+             </item>
+            </layout>
+           </item>
+           <item>
+            <layout class="QHBoxLayout" name="horizontalLayout_133">
+             <item>
+              <widget class="QCheckBox" name="checkBox_112">
+               <property name="text">
+                <string/>
+               </property>
+              </widget>
+             </item>
+             <item>
+              <widget class="QLineEdit" name="lineEdit_121"/>
+             </item>
+            </layout>
+           </item>
+           <item>
+            <layout class="QHBoxLayout" name="horizontalLayout_134">
+             <item>
+              <widget class="QCheckBox" name="checkBox_113">
+               <property name="text">
+                <string/>
+               </property>
+              </widget>
+             </item>
+             <item>
+              <widget class="QLineEdit" name="lineEdit_122"/>
+             </item>
+            </layout>
+           </item>
+           <item>
+            <layout class="QHBoxLayout" name="horizontalLayout_135">
+             <item>
+              <widget class="QCheckBox" name="checkBox_114">
+               <property name="text">
+                <string/>
+               </property>
+              </widget>
+             </item>
+             <item>
+              <widget class="QLineEdit" name="lineEdit_123"/>
+             </item>
+            </layout>
+           </item>
+           <item>
+            <layout class="QHBoxLayout" name="horizontalLayout_137">
+             <item>
+              <widget class="QCheckBox" name="checkBox_116">
+               <property name="text">
+                <string/>
+               </property>
+              </widget>
+             </item>
+             <item>
+              <widget class="QLineEdit" name="lineEdit_125"/>
+             </item>
+            </layout>
+           </item>
+           <item>
+            <layout class="QHBoxLayout" name="horizontalLayout_138">
+             <item>
+              <widget class="QCheckBox" name="checkBox_117">
+               <property name="text">
+                <string/>
+               </property>
+              </widget>
+             </item>
+             <item>
+              <widget class="QLineEdit" name="lineEdit_126"/>
+             </item>
+            </layout>
+           </item>
+          </layout>
+         </item>
+         <item row="1" column="5">
+          <widget class="Line" name="line_6">
+           <property name="orientation">
+            <enum>Qt::Vertical</enum>
+           </property>
+          </widget>
+         </item>
+         <item row="1" column="1">
+          <widget class="Line" name="line">
+           <property name="orientation">
+            <enum>Qt::Vertical</enum>
+           </property>
+          </widget>
+         </item>
+         <item row="1" column="7">
+          <widget class="Line" name="line_14">
+           <property name="orientation">
+            <enum>Qt::Vertical</enum>
+           </property>
+          </widget>
+         </item>
+         <item row="1" column="3">
+          <widget class="Line" name="line_5">
+           <property name="orientation">
+            <enum>Qt::Vertical</enum>
+           </property>
+          </widget>
+         </item>
+         <item row="1" column="8">
+          <layout class="QVBoxLayout" name="verticalLayout_15">
+           <item>
+            <layout class="QHBoxLayout" name="horizontalLayout_123">
+             <item alignment="Qt::AlignBottom">
+              <widget class="QLabel" name="label_43">
+               <property name="text">
+                <string>Spell Level</string>
+               </property>
+              </widget>
+             </item>
+             <item alignment="Qt::AlignBottom">
+              <widget class="QLabel" name="label_44">
+               <property name="text">
+                <string>Slots Total</string>
+               </property>
+              </widget>
+             </item>
+             <item alignment="Qt::AlignBottom">
+              <widget class="QLabel" name="label_45">
+               <property name="text">
+                <string>Slots Expended</string>
+               </property>
+              </widget>
+             </item>
+            </layout>
+           </item>
+           <item>
+            <layout class="QHBoxLayout" name="horizontalLayout_136">
+             <item>
+              <widget class="QLabel" name="label_46">
+               <property name="text">
+                <string>8</string>
+               </property>
+              </widget>
+             </item>
+             <item>
+              <widget class="QSpinBox" name="spinBox_22"/>
+             </item>
+             <item>
+              <widget class="QSpinBox" name="spinBox_23"/>
+             </item>
+            </layout>
+           </item>
+           <item>
+            <widget class="Line" name="line_13">
+             <property name="orientation">
+              <enum>Qt::Horizontal</enum>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <layout class="QHBoxLayout" name="horizontalLayout_139">
+             <item>
+              <widget class="QCheckBox" name="checkBox_104">
+               <property name="text">
+                <string/>
+               </property>
+              </widget>
+             </item>
+             <item>
+              <widget class="QLineEdit" name="lineEdit_113"/>
+             </item>
+            </layout>
+           </item>
+           <item>
+            <layout class="QHBoxLayout" name="horizontalLayout_140">
+             <item>
+              <widget class="QCheckBox" name="checkBox_115">
+               <property name="text">
+                <string/>
+               </property>
+              </widget>
+             </item>
+             <item>
+              <widget class="QLineEdit" name="lineEdit_124"/>
+             </item>
+            </layout>
+           </item>
+           <item>
+            <layout class="QHBoxLayout" name="horizontalLayout_141">
+             <item>
+              <widget class="QCheckBox" name="checkBox_118">
+               <property name="text">
+                <string/>
+               </property>
+              </widget>
+             </item>
+             <item>
+              <widget class="QLineEdit" name="lineEdit_127"/>
+             </item>
+            </layout>
+           </item>
+           <item>
+            <layout class="QHBoxLayout" name="horizontalLayout_142">
+             <item>
+              <widget class="QCheckBox" name="checkBox_119">
+               <property name="text">
+                <string/>
+               </property>
+              </widget>
+             </item>
+             <item>
+              <widget class="QLineEdit" name="lineEdit_128"/>
+             </item>
+            </layout>
+           </item>
+           <item>
+            <layout class="QHBoxLayout" name="horizontalLayout_143">
+             <item>
+              <widget class="QCheckBox" name="checkBox_120">
+               <property name="text">
+                <string/>
+               </property>
+              </widget>
+             </item>
+             <item>
+              <widget class="QLineEdit" name="lineEdit_129"/>
+             </item>
+            </layout>
+           </item>
+           <item>
+            <layout class="QHBoxLayout" name="horizontalLayout_144">
+             <item>
+              <widget class="QCheckBox" name="checkBox_121">
+               <property name="text">
+                <string/>
+               </property>
+              </widget>
+             </item>
+             <item>
+              <widget class="QLineEdit" name="lineEdit_130"/>
+             </item>
+            </layout>
+           </item>
+           <item>
+            <layout class="QHBoxLayout" name="horizontalLayout_145">
+             <item>
+              <widget class="QCheckBox" name="checkBox_122">
+               <property name="text">
+                <string/>
+               </property>
+              </widget>
+             </item>
+             <item>
+              <widget class="QLineEdit" name="lineEdit_131"/>
+             </item>
+            </layout>
+           </item>
+           <item>
+            <layout class="QHBoxLayout" name="horizontalLayout_146">
+             <item>
+              <widget class="QCheckBox" name="checkBox_123">
+               <property name="text">
+                <string/>
+               </property>
+              </widget>
+             </item>
+             <item>
+              <widget class="QLineEdit" name="lineEdit_132"/>
+             </item>
+            </layout>
+           </item>
+           <item>
+            <layout class="QHBoxLayout" name="horizontalLayout_147">
+             <item>
+              <widget class="QCheckBox" name="checkBox_124">
+               <property name="text">
+                <string/>
+               </property>
+              </widget>
+             </item>
+             <item>
+              <widget class="QLineEdit" name="lineEdit_133"/>
+             </item>
+            </layout>
+           </item>
+           <item>
+            <layout class="QHBoxLayout" name="horizontalLayout_148">
+             <item>
+              <widget class="QCheckBox" name="checkBox_125">
+               <property name="text">
+                <string/>
+               </property>
+              </widget>
+             </item>
+             <item>
+              <widget class="QLineEdit" name="lineEdit_134"/>
+             </item>
+            </layout>
+           </item>
+           <item>
+            <layout class="QHBoxLayout" name="horizontalLayout_149">
+             <item>
+              <widget class="QCheckBox" name="checkBox_126">
+               <property name="text">
+                <string/>
+               </property>
+              </widget>
+             </item>
+             <item>
+              <widget class="QLineEdit" name="lineEdit_135"/>
+             </item>
+            </layout>
+           </item>
+           <item>
+            <layout class="QHBoxLayout" name="horizontalLayout_150">
+             <item>
+              <widget class="QCheckBox" name="checkBox_127">
+               <property name="text">
+                <string/>
+               </property>
+              </widget>
+             </item>
+             <item>
+              <widget class="QLineEdit" name="lineEdit_136"/>
+             </item>
+            </layout>
+           </item>
+          </layout>
+         </item>
+         <item row="3" column="8">
+          <layout class="QVBoxLayout" name="verticalLayout_16">
+           <item>
+            <layout class="QHBoxLayout" name="horizontalLayout_151">
+             <item alignment="Qt::AlignBottom">
+              <widget class="QLabel" name="label_47">
+               <property name="text">
+                <string>Spell Level</string>
+               </property>
+              </widget>
+             </item>
+             <item alignment="Qt::AlignBottom">
+              <widget class="QLabel" name="label_48">
+               <property name="text">
+                <string>Slots Total</string>
+               </property>
+              </widget>
+             </item>
+             <item alignment="Qt::AlignBottom">
+              <widget class="QLabel" name="label_49">
+               <property name="text">
+                <string>Slots Expended</string>
+               </property>
+              </widget>
+             </item>
+            </layout>
+           </item>
+           <item>
+            <layout class="QHBoxLayout" name="horizontalLayout_152">
+             <item>
+              <widget class="QLabel" name="label_50">
+               <property name="text">
+                <string>9</string>
+               </property>
+              </widget>
+             </item>
+             <item>
+              <widget class="QSpinBox" name="spinBox_24"/>
+             </item>
+             <item>
+              <widget class="QSpinBox" name="spinBox_25"/>
+             </item>
+            </layout>
+           </item>
+           <item>
+            <widget class="Line" name="line_19">
+             <property name="orientation">
+              <enum>Qt::Horizontal</enum>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <layout class="QHBoxLayout" name="horizontalLayout_153">
+             <item>
+              <widget class="QCheckBox" name="checkBox_128">
+               <property name="text">
+                <string/>
+               </property>
+              </widget>
+             </item>
+             <item>
+              <widget class="QLineEdit" name="lineEdit_137"/>
+             </item>
+            </layout>
+           </item>
+           <item>
+            <layout class="QHBoxLayout" name="horizontalLayout_154">
+             <item>
+              <widget class="QCheckBox" name="checkBox_129">
+               <property name="text">
+                <string/>
+               </property>
+              </widget>
+             </item>
+             <item>
+              <widget class="QLineEdit" name="lineEdit_138"/>
+             </item>
+            </layout>
+           </item>
+           <item>
+            <layout class="QHBoxLayout" name="horizontalLayout_155">
+             <item>
+              <widget class="QCheckBox" name="checkBox_130">
+               <property name="text">
+                <string/>
+               </property>
+              </widget>
+             </item>
+             <item>
+              <widget class="QLineEdit" name="lineEdit_139"/>
+             </item>
+            </layout>
+           </item>
+           <item>
+            <layout class="QHBoxLayout" name="horizontalLayout_156">
+             <item>
+              <widget class="QCheckBox" name="checkBox_131">
+               <property name="text">
+                <string/>
+               </property>
+              </widget>
+             </item>
+             <item>
+              <widget class="QLineEdit" name="lineEdit_140"/>
+             </item>
+            </layout>
+           </item>
+           <item>
+            <layout class="QHBoxLayout" name="horizontalLayout_157">
+             <item>
+              <widget class="QCheckBox" name="checkBox_132">
+               <property name="text">
+                <string/>
+               </property>
+              </widget>
+             </item>
+             <item>
+              <widget class="QLineEdit" name="lineEdit_141"/>
+             </item>
+            </layout>
+           </item>
+           <item>
+            <layout class="QHBoxLayout" name="horizontalLayout_158">
+             <item>
+              <widget class="QCheckBox" name="checkBox_133">
+               <property name="text">
+                <string/>
+               </property>
+              </widget>
+             </item>
+             <item>
+              <widget class="QLineEdit" name="lineEdit_142"/>
+             </item>
+            </layout>
+           </item>
+           <item>
+            <layout class="QHBoxLayout" name="horizontalLayout_159">
+             <item>
+              <widget class="QCheckBox" name="checkBox_134">
+               <property name="text">
+                <string/>
+               </property>
+              </widget>
+             </item>
+             <item>
+              <widget class="QLineEdit" name="lineEdit_143"/>
+             </item>
+            </layout>
+           </item>
+           <item>
+            <layout class="QHBoxLayout" name="horizontalLayout_160">
+             <item>
+              <widget class="QCheckBox" name="checkBox_135">
+               <property name="text">
+                <string/>
+               </property>
+              </widget>
+             </item>
+             <item>
+              <widget class="QLineEdit" name="lineEdit_144"/>
+             </item>
+            </layout>
+           </item>
+           <item>
+            <layout class="QHBoxLayout" name="horizontalLayout_161">
+             <item>
+              <widget class="QCheckBox" name="checkBox_136">
+               <property name="text">
+                <string/>
+               </property>
+              </widget>
+             </item>
+             <item>
+              <widget class="QLineEdit" name="lineEdit_145"/>
+             </item>
+            </layout>
+           </item>
+           <item>
+            <layout class="QHBoxLayout" name="horizontalLayout_162">
+             <item>
+              <widget class="QCheckBox" name="checkBox_137">
+               <property name="text">
+                <string/>
+               </property>
+              </widget>
+             </item>
+             <item>
+              <widget class="QLineEdit" name="lineEdit_146"/>
+             </item>
+            </layout>
+           </item>
+           <item>
+            <layout class="QHBoxLayout" name="horizontalLayout_163">
+             <item>
+              <widget class="QCheckBox" name="checkBox_138">
+               <property name="text">
+                <string/>
+               </property>
+              </widget>
+             </item>
+             <item>
+              <widget class="QLineEdit" name="lineEdit_147"/>
+             </item>
+            </layout>
+           </item>
+           <item>
+            <layout class="QHBoxLayout" name="horizontalLayout_164">
+             <item>
+              <widget class="QCheckBox" name="checkBox_139">
+               <property name="text">
+                <string/>
+               </property>
+              </widget>
+             </item>
+             <item>
+              <widget class="QLineEdit" name="lineEdit_148"/>
+             </item>
+            </layout>
+           </item>
+          </layout>
+         </item>
+         <item row="0" column="0">
+          <widget class="Line" name="line_25">
+           <property name="orientation">
+            <enum>Qt::Horizontal</enum>
+           </property>
+          </widget>
+         </item>
+         <item row="0" column="2">
+          <widget class="Line" name="line_26">
+           <property name="orientation">
+            <enum>Qt::Horizontal</enum>
+           </property>
+          </widget>
+         </item>
+         <item row="0" column="4">
+          <widget class="Line" name="line_27">
+           <property name="orientation">
+            <enum>Qt::Horizontal</enum>
+           </property>
+          </widget>
+         </item>
+         <item row="0" column="6">
+          <widget class="Line" name="line_28">
+           <property name="orientation">
+            <enum>Qt::Horizontal</enum>
+           </property>
+          </widget>
+         </item>
+         <item row="0" column="8">
+          <widget class="Line" name="line_29">
+           <property name="orientation">
+            <enum>Qt::Horizontal</enum>
+           </property>
+          </widget>
+         </item>
+        </layout>
+       </widget>
+      </widget>
+      <widget class="QWidget" name="notes_tb">
+       <attribute name="title">
+        <string>Notes</string>
+       </attribute>
+       <widget class="QWidget" name="verticalLayoutWidget_7">
+        <property name="geometry">
+         <rect>
+          <x>20</x>
+          <y>10</y>
+          <width>1021</width>
+          <height>821</height>
+         </rect>
+        </property>
+        <layout class="QVBoxLayout" name="notes_vl">
+         <item>
+          <widget class="QLabel" name="notes_lb">
+           <property name="text">
+            <string>Notes</string>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QPlainTextEdit" name="notes_pte"/>
+         </item>
+        </layout>
+       </widget>
+      </widget>
+     </widget>
+    </item>
+   </layout>
+  </widget>
+  <widget class="QMenuBar" name="menubar">
+   <property name="geometry">
+    <rect>
+     <x>0</x>
+     <y>0</y>
+     <width>1085</width>
+     <height>21</height>
+    </rect>
+   </property>
+   <widget class="QMenu" name="menuDnD_Notepad">
+    <property name="title">
+     <string>File</string>
+    </property>
+    <addaction name="separator"/>
+    <addaction name="actionNew"/>
+    <addaction name="actionSave"/>
+    <addaction name="actionSave_As"/>
+    <addaction name="actionLoad"/>
+   </widget>
+   <addaction name="menuDnD_Notepad"/>
+  </widget>
+  <widget class="QStatusBar" name="statusbar"/>
+  <action name="actionNew">
+   <property name="text">
+    <string>New</string>
+   </property>
+  </action>
+  <action name="actionSave">
+   <property name="text">
+    <string>Save</string>
+   </property>
+  </action>
+  <action name="actionSave_As">
+   <property name="text">
+    <string>Save As</string>
+   </property>
+  </action>
+  <action name="actionLoad">
+   <property name="text">
+    <string>Open</string>
+   </property>
+  </action>
+  <action name="actionPreferences">
+   <property name="text">
+    <string>Preferences</string>
+   </property>
+  </action>
+  <action name="actionLevel_Up">
+   <property name="text">
+    <string>Level Up</string>
+   </property>
+  </action>
+  <action name="actionFull_Screen">
+   <property name="text">
+    <string>Full Screen</string>
+   </property>
+  </action>
+  <action name="actionWindowed">
+   <property name="text">
+    <string>Windowed</string>
+   </property>
+  </action>
+ </widget>
+ <resources/>
+ <connections/>
+</ui>
